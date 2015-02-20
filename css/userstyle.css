@@ -48,14 +48,6 @@ h1 {
 h2 {
     font-size:1.4em;
 }
-.logo {
-    font:2em Arial;
-    margin:0 0 10px 0;
-    padding:0;
-    width:200px;
-    color:#fff;
-}
-
 
 /* Containers */
 body {
@@ -72,7 +64,7 @@ body {
 header {
     width:940px;
     padding:10px;
-    margin:0 auto 10px auto;
+    margin:0 auto 0px auto;
 }
 
 article.header {
@@ -121,21 +113,12 @@ nav ul li a.last {
     border-right:0;
 }
 
-#emma {
-	float: left;
-	width: 220px;
-	border: 5px;
-}
 /* Aside */
 aside {
-    width:300px;
+    width:260px;
     float:right;
-    border:1px dashed #aaa;
+    border-left:1px dashed #aaa;
     padding-left:15px;
-    /*position: absolute;
-    background:lightslategray;
-	left: 550px;
-    top: 260px;*/
 }
 
 /* Footer */

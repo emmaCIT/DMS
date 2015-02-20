@@ -1,9 +1,16 @@
 <aside>
 	<?php 
 	if (logged_in() === true) {
-		include 'includes/widgets/loggedin.php';
+			include 'patientRecord.php';
 	} else {
 			include 'includes/widgets/login.php';
 	}
 	?>
 </aside>
+
+
+
+
+
+
+
