@@ -8,7 +8,7 @@ To take care of all browser compatibility.
 	padding: 0px;		
 }
 
-header, section, footer, aside, nav, body{
+header, section, footer, aside, nav, article, hgroup{
 	display: block;
 } 
 
@@ -36,7 +36,7 @@ a:hover {
     text-decoration:none;
 }
 ul li {
-    padding:12px 0;
+    padding:10px 0;
 }
 ul li input[type="text"], ul li input[type="password"] {
     width:200px;

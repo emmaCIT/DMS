@@ -21,7 +21,7 @@ if (empty($_POST) === false) {
 			$errors[] = 'That username/password combination is incorrect';
 		} else{
 			$_SESSION['user_id'] = $login;
-			header('Location: patientRecord.php');
+			header('Location: patientData.php');
 			exit();	
 		}
 	}

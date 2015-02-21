@@ -63,15 +63,9 @@ body {
 }
 header {
     width:940px;
-    padding:10px;
     margin:0 auto 0px auto;
 }
 
-article.header {
-    width:90px;
-    padding:10px;
-    margin:0 auto 10px auto;
-}
 #container {
     min-height:500px;
     border-radius:5px 5px 0 0;
@@ -95,6 +89,9 @@ footer {
 /* Navigation */
 nav {
     float:left;
+    font-size: 17px;
+    padding-top: 10px;
+    padding-bottom: 5px;
 }
 nav ul {
     margin:0;
@@ -102,6 +99,8 @@ nav ul {
 nav ul li {
     display:inline;
     margin-right:10px;
+    padding: 5px 36px;
+    background-color: #EBEBEB; 
 }
 nav ul li a {
     text-decoration:none;

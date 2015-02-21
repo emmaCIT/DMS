@@ -1,1 +1,1 @@
-<footer> &copy; phpacademy.org 2011. All rights reserved. </footer>
+<footer> Copyright &copy; Emmanuela Ogbene 2015. All rights reserved. </footer>
