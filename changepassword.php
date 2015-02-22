@@ -6,11 +6,20 @@ if(empty($_POST) === false) {
 	foreach($_POST as $key=>$value) {
 		if(empty($value) && in_array($key, $required_fields) === true) {
 			$errors[] = 'Fields marked with an asterisk are required';
-			break 1;
-				
+			break 1;	
 		}
 	}
+	
+	if (md5($_POST['current_password']) === $user_data['password']) {
+		if ($_POST['password'] === $_POST['password_again']) {
+			
+		}
+	} else {
+		$errors[] = 'Your current password is incorrect';
+	}
+	print_r($errors);
 }
+
 include 'patientInterface/includes/overall/header.php';
 ?>
 
