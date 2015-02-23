@@ -31,7 +31,8 @@ include 'patientInterface/includes/overall/header.php';
 <?php 
 if (empty($_POST) === false && empty($errors) === true) {
 	//posted the form and no errors.
-	change_password();
+	change_password($session_user_id, $_POST['password']);
+	header('Location: changepassword.php?success');
 }else if (empty($errors) === false) {
 	//output errors
 	echo output_errors($errors);
