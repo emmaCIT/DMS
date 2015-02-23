@@ -34,6 +34,7 @@ a:link, a:visited {
 }
 a:hover {
     text-decoration:none;
+    background-color: #EBEBEB;
 }
 ul li {
     padding:15px 0;
@@ -99,8 +100,7 @@ nav ul {
 nav ul li {
     display:inline;
     margin-right:10px;
-    padding: 5px 36px;
-    background-color: #EBEBEB; 
+    padding: 5px 36px; 
 }
 nav ul li a {
     text-decoration:none;
