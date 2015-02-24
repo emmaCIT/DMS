@@ -9,7 +9,7 @@ if (isset($_GET['email'], $_GET['email_code']) === true) {
 	if (email_exists($email) === false) {
 		$errors[] = 'Oops, something went wrong, and we couldn\'t find that email address!';
 	}else if (activate($email, $email_code) === false) {
-		
+		$errors[] = 'We had problems activating your account';
 	}
 } else {
 	header('Location: index.php');

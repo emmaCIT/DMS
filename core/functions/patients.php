@@ -1,4 +1,9 @@
 <?php
+function activate($email, $email_code) {
+	$email 		=mysql_real_escape_string($email);
+	$email_code =mysql_real_escape_string($email_code);
+}
+
 function change_password($user_id, $password) {
 	$user_id = (int) $user_id;
 	$password = md5($password);
