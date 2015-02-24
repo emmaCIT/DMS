@@ -14,8 +14,7 @@ function register_user($register_data) {
 	$data = '\'' . implode('\', \'', $register_data) . '\'';
 
 	mysql_query("INSERT INTO `users` ($fields) VALUES ($data)");
-	email($register_data['email'], 'Activate your account', "Hello " . $register_user['first_name'] . ", \n\n You need to activate your account, therefore use the link below:\n\n http://localhost/dms/activate.php?email=" . $register_data['email'] . "&email_code=" . $register_data['email_code']. " \n\n - DMS	
-	");
+	email($register_data['email'], 'Activate your account', "Hello " . $register_data['first_name'] . ", \n\nYou need to activate your account, therefore use the link below:\n\nhttp://localhost/dms/activate.php?email=" . $register_data['email'] . "&email_code=" . $register_data['email_code'] . "\n\n- DMS");
 }
 
 

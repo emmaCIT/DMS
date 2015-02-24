@@ -39,7 +39,7 @@ if (empty($_POST) === false) {
 
 <?php
 if (isset($_GET['success']) && empty($_GET['success'])) {
-	echo 'You\'ve been registered successfully!';
+	echo 'You\'ve been registered successfully! Please check your email to activate your account.';
 }else {
 	if (empty($_POST) === false && empty($errors) === true) {
 		$register_data = array(
