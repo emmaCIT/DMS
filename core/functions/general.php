@@ -1,4 +1,8 @@
 <?php
+function email($to, $subject, $body) {
+	mail($to, $subject, $body, 'From: emmaogbene@gmail.com');
+}
+
 function array_sanitize(&$item) {
 	$item = mysql_real_escape_string($item);
 }

@@ -14,6 +14,7 @@ function register_user($register_data) {
 	$data = '\'' . implode('\', \'', $register_data) . '\'';
 
 	mysql_query("INSERT INTO `users` ($fields) VALUES ($data)");
+	email($register_data['email'], 'Activate your account', "");
 }
 
 
