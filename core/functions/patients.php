@@ -17,12 +17,6 @@ function register_user($register_data) {
 }
 
 
-
-/*function totaluser_count(){
-	return mysql_result(mysql_query("SELECT COUNT(`user_id`) FROM `users` WHERE `active` = 1"), 0);
-}
-*/
-
 /*
  * The code below is for logging into the Health Management System and displaying the User's Data.
  */
