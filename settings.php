@@ -17,12 +17,20 @@ if (empty($_POST) === false) {
 		}else if (email_exists($_POST['email']) === true && $user_data['email'] !== $_POST['email']) {
 			$errors[] = 'Sorry, the email \'' . $_POST['email'] . '\' is already in use';
 		}
-	}
-		print_r($errors);	
+	}		
 }
 
 ?>
 <h1>Settings</h1>
+
+<?php 
+if(empty($_POST) === false && empty($errors) === true) {
+	//update user details
+	
+}else if (empty($errors) === false) {
+	echo output_errors($errors);
+}
+?>
 <form action="" method="post">
 		<ul>
 			<li>First name*: <br> 
