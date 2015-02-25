@@ -11,8 +11,16 @@ if (empty($_POST) === false) {
 		}
 	}
 
-	
+	if (empty($errors) === true) {
+		if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) === false) {
+			$errors[] = 'A valid email address is required';
+		}else if (email_exists($_POST['email']) === true && $user_data['email'] !== $_POST['email']) {
+			$errors[] = 'Sorry, the email \'' . $_POST['email'] . '\' is already in use';
+		}
+	}
+		print_r($errors);	
 }
+
 ?>
 <h1>Settings</h1>
 <form action="" method="post">
