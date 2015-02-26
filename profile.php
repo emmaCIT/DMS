@@ -5,7 +5,7 @@ include 'patientInterface/includes/overall/header.php';
 ?>	          
         
 		<section>
-			<h1>Profile Information</h1>
+			<h1>Home</h1>
 
 		</section>
 
