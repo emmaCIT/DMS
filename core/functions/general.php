@@ -1,4 +1,18 @@
 <?php
+function logged_in_redirect() {
+	if (logged_in() === true) {
+		header('Location: profile.php');
+		exit();
+	}
+}
+
+function protect_page() {
+	if (logged_in() === false) {
+		header('Location: protected.php');
+		exit();
+	}
+}
+
 function email($to, $subject, $body) {
 	mail($to, $subject, $body, 'From: emmaogbene@gmail.com');
 }

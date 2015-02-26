@@ -1,5 +1,6 @@
 <?php
 include 'core/init.php';
+protect_page();
 include 'patientInterface/includes/overall/header.php';
 ?>	          
         

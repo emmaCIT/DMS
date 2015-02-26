@@ -1,7 +1,7 @@
 <aside>
 	<?php 
 	if (logged_in() === true) {
-			include 'patientData.php';
+			include 'profile.php';
 	} else {
 			include 'includes/widgets/login.php';
 	}

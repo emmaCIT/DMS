@@ -1,6 +1,6 @@
 <?php
 include 'core/init.php';
-
+protect_page();
 if(empty($_POST) === false) {
 	$required_fields = array('current_password', 'password', 'password_again');
 	foreach($_POST as $key=>$value) {

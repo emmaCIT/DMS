@@ -1,11 +1,12 @@
 <?php
 include 'core/init.php';
+protect_page();
 include 'patientInterface/includes/overall/header.php';
 ?>	          
         
 		<section>
-			<h1>Home</h1>
-			<p>Just a Template</p>
+			<h1>Profile Information</h1>
+
 		</section>
 
 <?php include 'patientInterface/includes/overall/footer.php'; ?>

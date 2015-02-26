@@ -1,5 +1,6 @@
 <?php
 include 'core/init.php';
+logged_in_redirect();
 if (empty($_POST) === false) {
 	$username = $_POST['username'];
 	$password = $_POST['password'];
@@ -21,7 +22,7 @@ if (empty($_POST) === false) {
 			$errors[] = 'That username/password combination is incorrect';
 		} else{
 			$_SESSION['user_id'] = $login;
-			header('Location: patientData.php');
+			header('Location: profile.php');
 			exit();	
 		}
 	}
