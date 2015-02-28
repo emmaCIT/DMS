@@ -1,13 +1,31 @@
 <?php
-function update_user($update_data) {
-	global $session_user_id;
+function recover($mode, $email) {
+	$mode 		 = sanitize($mode);
+	$email 		 = sanitize($email);
+	
+	$user_data	 = patient_data(user_id_from_email($email), 'user_id', 'first_name', 'username');
+	
+	if ($mode == 'username') {
+		//Recover Username
+		email($email, 'Your username', "Hello " . $user_data['first_name'] . ", \n\nYour username is: " . $user_data['username'] . "\n\n-Diabetes Management System");
+	} else if ($mode == 'password') {
+		//Recover Password
+		$generated_password = substr(md5(rand(999, 999999)), 0, 8);
+		change_password($user_data['user_id'], $generated_password);
+		
+		update_user($user_data['user_id'], array('password_recover' => '1'));
+		email($email, 'Your password recovery', "Hello " . $user_data['first_name'] . ", \n\nYour new password is: " . $generated_password . "\n\n-Diabetes Management System");
+	}
+}
+
+function update_user($user_id, $update_data) {
 	$update = array();
 	array_walk($update_data, 'array_sanitize');
 	
 	foreach ($update_data as $field=>$data) {
 		$update[] = '`' . $field . '` = \'' . $data . '\'';
 	}
-	mysql_query("UPDATE `users` SET " . implode(', ', $update) . " WHERE `user_id` = $session_user_id");
+	mysql_query("UPDATE `users` SET " . implode(', ', $update) . " WHERE `user_id` = $user_id");
 }
 
 function activate($email, $email_code) {
@@ -88,6 +106,10 @@ function user_id_from_username($username) {
 	return mysql_result(mysql_query("SELECT `user_id` FROM `users` WHERE `username` = '$username'"), 0, 'user_id');
 }
 
+function user_id_from_email($email) {
+	$email = sanitize($email);
+	return mysql_result(mysql_query("SELECT `user_id` FROM `users` WHERE `email` = '$email'"), 0, 'user_id');
+}
 
 function login($username, $password){
 	$user_id = user_id_from_username($username);

@@ -36,7 +36,7 @@ if(isset($_GET['success']) === true && empty($_GET['success']) === true) {
 				'email' 		=> $_POST['email'],
 		);
 		
-		update_user($update_data);
+		update_user($session_user_id, $update_data);
 		header('Location: settings.php?success');
 		exit();
 		

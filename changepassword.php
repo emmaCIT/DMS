@@ -29,9 +29,15 @@ include 'patientInterface/includes/overall/header.php';
 	<h1>Change Password</h1>
 
 <?php
-if (isset($_GET['success']) && empty($_GET['success'])) {
+if (isset($_GET['success']) === true && empty($_GET['success']) === true) {
 	echo 'Your password has been changed.';
 } else {
+	if (isset($_GET['force']) === true && empty($_GET['force']) === true) {
+	?>
+		<p>You must change your assword now that you've requested.</p>
+	<?php
+	}
+	
 	if (empty($_POST) === false && empty($errors) === true) {
 		//posted the form and no errors.
 		change_password($session_user_id, $_POST['password']);
