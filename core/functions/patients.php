@@ -45,7 +45,7 @@ function change_password($user_id, $password) {
 	$user_id = (int) $user_id;
 	$password = md5($password);
 	
-	mysql_query("UPDATE `users` SET `password` = '$password' WHERE `user_id` = $user_id");
+	mysql_query("UPDATE `users` SET `password` = '$password', `password_recover` = 0 WHERE `user_id` = $user_id");
 }
 
 function register_user($register_data) {

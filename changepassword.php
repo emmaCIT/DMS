@@ -34,7 +34,7 @@ if (isset($_GET['success']) === true && empty($_GET['success']) === true) {
 } else {
 	if (isset($_GET['force']) === true && empty($_GET['force']) === true) {
 	?>
-		<p>You must change your assword now that you've requested.</p>
+		<p>You must change your password now that you've requested.</p>
 	<?php
 	}
 	
