@@ -33,7 +33,7 @@ if (isset($_GET['username']) === true && empty($_GET['username']) === false) {
 		
 <?php
 	} else {
-		echo '<script type="text/javascript">alert("Sorry, that user doesn\'t exist!"); </script>';
+		echo 'Sorry, that user doesn\'t exist!';
 	}
 } else {
 	header('Location: profile.php');
