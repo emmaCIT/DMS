@@ -1,4 +1,9 @@
 <?php
+function is_admin($user_id) {
+	$user_id = (int) $user_id;
+	return (mysql_result(mysql_query("SELECT COUNT(`user_id`) FROM `users` WHERE `user_id` = $user_id AND `type` = 1"), 0) == 1) ? true : false;
+}
+
 function recover($mode, $email) {
 	$mode 		 = sanitize($mode);
 	$email 		 = sanitize($email);
@@ -119,16 +124,4 @@ function login($username, $password){
 	return (mysql_result(mysql_query("SELECT COUNT(`user_id`) FROM `users` WHERE `username` = '$username' AND `password` = '$password'"), 0) == 1) ? $user_id : false;
 }
 
-/*function hasPermission($key) {
-	$group = $this->_db->get('groups', array('user_id', '=', $this->data()->group));
-
-	if($group->count()) {
-		$permissions = json_decode($group->first()->permissions, true);
-
-		if($permissions[$key] == true) {
-			return true;
-		}
-	}
-	return false;
-}*/
 ?>

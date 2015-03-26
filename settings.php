@@ -1,7 +1,7 @@
 <?php
 include 'core/init.php';
 protect_page();
-include 'patientInterface/includes/overall/header.php';
+include 'includes/overall/header.php';
 
 if (empty($_POST) === false) {
 	$required_fields = array('first_name', 'email');
@@ -63,7 +63,7 @@ if(isset($_GET['success']) === true && empty($_GET['success']) === true) {
 	
 <?php
 }
-include 'patientInterface/includes/overall/footer.php'; 
+include 'includes/overall/footer.php'; 
 ?>
 
 

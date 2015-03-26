@@ -3,7 +3,7 @@ include 'core/init.php';
 protect_page();
 include 'patientInterface/includes/overall/header.php';
         
-
+/*
 if (isset($_GET['username']) === true && empty($_GET['username']) === false) {
 	$username 			= $_GET['username'];
 	
@@ -39,5 +39,5 @@ if (isset($_GET['username']) === true && empty($_GET['username']) === false) {
 	header('Location: profile.php');
 	exit();
 }
-
+*/
 include 'patientInterface/includes/overall/footer.php'; ?>

@@ -1,4 +1,8 @@
 <?php
+function email($to, $subject, $body) {
+	mail($to, $subject, $body, 'From: emmaogbene@gmail.com');
+}
+
 function logged_in_redirect() {
 	if (logged_in() === true) {
 		header('Location: profile.php');
@@ -13,8 +17,12 @@ function protect_page() {
 	}
 }
 
-function email($to, $subject, $body) {
-	mail($to, $subject, $body, 'From: emmaogbene@gmail.com');
+function doctor_protect() {
+	global $user_data;
+	if (is_admin($user_data['user_id']) === false) {
+		header('Location: index.php');
+		exit();
+	}
 }
 
 function array_sanitize(&$item) {

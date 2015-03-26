@@ -21,7 +21,7 @@ if(empty($_POST) === false) {
 	}
 }
 
-include 'patientInterface/includes/overall/header.php';
+include 'includes/overall/header.php';
 
 ?>
 
@@ -68,7 +68,7 @@ if (isset($_GET['success']) === true && empty($_GET['success']) === true) {
 
 <?php
 }
-include 'patientInterface/includes/overall/footer.php'; 
+include 'includes/overall/footer.php'; 
 ?>
 
 

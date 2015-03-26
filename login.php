@@ -18,14 +18,15 @@ if (empty($_POST) === false) {
 		}
 		
 		$login = login($username, $password);
+		
 		if ($login === false) {
-			$errors[] = 'That username/password combination is incorrect';
-		} else{
+				$errors[] = 'That username/password combination is incorrect';
+		} else {
 			$_SESSION['user_id'] = $login;
-			header('Location: profile.php');
-			exit();	
+			header('Location: index.php');
+			exit();
 		}
-	}
+   }
 }else {
 	$errors[] = 'No data received';
 }
