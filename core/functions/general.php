@@ -5,7 +5,7 @@ function email($to, $subject, $body) {
 
 function logged_in_redirect() {
 	if (logged_in() === true) {
-		header('Location: profile.php');
+		header('Location: index.php');
 		exit();
 	}
 }
@@ -17,13 +17,6 @@ function protect_page() {
 	}
 }
 
-function doctor_protect() {
-	global $user_data;
-	if (is_admin($user_data['user_id']) === false) {
-		header('Location: index.php');
-		exit();
-	}
-}
 
 function array_sanitize(&$item) {
 	$item = htmlentities(strip_tags(mysql_real_escape_string($item)));

@@ -1,6 +1,7 @@
 <?php
 include 'core/init.php';
 protect_page();
+
 if(empty($_POST) === false) {
 	$required_fields = array('current_password', 'password', 'password_again');
 	foreach($_POST as $key=>$value) {
@@ -17,16 +18,21 @@ if(empty($_POST) === false) {
 			$errors[] = 'Your password must be at least 8 characters';
 		}
 	} else {
-		$errors[] = 'Your current password is incorrect';
+			$errors[] = 'Your current password is incorrect';
+			}
 	}
-}
-
-include 'includes/overall/header.php';
-
 ?>
 
-<section>
-	<h1>Change Password</h1>
+<!DOCTYPE HTML>
+<html>
+	
+	<?php include 'includes/head.php'; ?>
+<body>
+    		<?php include 'includes/headerPat.php'; ?>
+    <div id="container">
+        <?php include 'includes/aside.php';?>
+        
+        	<h1>Change Password</h1>
 
 <?php
 if (isset($_GET['success']) === true && empty($_GET['success']) === true) {
@@ -64,12 +70,11 @@ if (isset($_GET['success']) === true && empty($_GET['success']) === true) {
 			</li>
 		</ul>
 	</form>
-	</section>
+	</div>
 
-<?php
-}
-include 'includes/overall/footer.php'; 
-?>
+<?php include 'includes/footer.php'; ?>
 
+</body>
+<?php } ?>
 
-
+</html>

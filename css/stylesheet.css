@@ -89,6 +89,9 @@ footer {
 /* Navigation */
 nav {
     float:left;
+    font-size: 17px;
+    padding-top: 10px;
+    padding-bottom: 5px;
 }
 nav ul {
     margin:0;
@@ -96,6 +99,7 @@ nav ul {
 nav ul li {
     display:inline;
     margin-right:10px;
+    padding: 5px 36px;
 }
 nav ul li a {
     text-decoration:none;

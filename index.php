@@ -1,10 +1,21 @@
 <?php
 include 'core/init.php';
-include 'includes/overall/header.php';
 ?>
 
-<h1>Welcome</h1>
-<p>to the Diabetes Management System.</p>
+<!DOCTYPE HTML>
+<html>
+	
+	<?php include 'includes/head.php'; ?>
+	<body>
+    		<?php include 'includes/header.php'; ?>
+    <div id="container">
+        <?php include 'includes/aside.php';?>
+			<h1>Welcome</h1>
+			<p>to the Diabetes Management System.</p>
+	</div>
+	
+	<?php include 'includes/footer.php';?>
 
-<?php include 'includes/overall/footer.php';?>
-
+	
+</body>
+</html>

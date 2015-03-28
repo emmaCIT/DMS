@@ -1,10 +1,20 @@
 <?php
-include 'core/init.php';
-include 'includes/overall/header.php';
+	include 'core/init.php';
 ?>
 
-<h1>Sorry, you need to be logged in to do that!</h1>
-<p>Please register or log in.</p>
+<!DOCTYPE HTML>
+<html>
+	<?php include 'includes/head.php'; ?>
+<body>
+    		<?php include 'includes/header.php'; ?>
+    <div id="container">
+        <?php include 'includes/aside.php';?>
+      
+			<h1>Sorry, you need to be logged in to do that!</h1>
+			<p>Please register or log in.</p>
+	</div>
+<?php include 'includes/footer.php'; ?>
 
-<?php include 'includes/overall/footer.php';?>
+</body>
+</html>
 

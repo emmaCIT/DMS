@@ -1,6 +1,7 @@
 <?php
 include 'core/init.php';
 logged_in_redirect();
+
 if (empty($_POST) === false) {
 	$username = $_POST['username'];
 	$password = $_POST['password'];
@@ -23,20 +24,30 @@ if (empty($_POST) === false) {
 				$errors[] = 'That username/password combination is incorrect';
 		} else {
 			$_SESSION['user_id'] = $login;
-			header('Location: index.php');
+			header('Location: patient.php');
 			exit();
 		}
    }
 }else {
 	$errors[] = 'No data received';
 }
-include 'includes/overall/header.php';
+?>
 
-if(empty($errors) === false){
-?>
+<!DOCTYPE HTML>
+<html>
+	
+	<?php include 'includes/head.php'; ?>
+<body>
+    		<?php include 'includes/header.php'; ?>
+    <div id="container">
+        <?php include 'includes/aside.php';?>
+
+       
+<?php if(empty($errors) === false){ ?>
 	<h2> We tried to log you in, but...</h2>
-<?php 
-	echo output_errors($errors); 
-}
-include 'includes/overall/footer.php'
-?>
+<?php echo output_errors($errors); } ?>
+</div>
+<?php include 'includes/footer.php'; ?>
+
+</body>
+</html>

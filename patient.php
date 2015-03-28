@@ -1,8 +1,17 @@
 <?php
 include 'core/init.php';
 protect_page();
-include 'patientInterface/includes/overall/header.php';
-        
+?>
+
+<!DOCTYPE HTML>
+<html>
+	<?php include 'includes/head.php'; ?>
+<body>
+    		<?php include 'includes/headerPat.php'; ?>
+    <div id="container">
+        <?php include 'includes/aside.php';?>
+        <h1>Patient</h1>
+		<?php
 /*
 if (isset($_GET['username']) === true && empty($_GET['username']) === false) {
 	$username 			= $_GET['username'];
@@ -40,4 +49,9 @@ if (isset($_GET['username']) === true && empty($_GET['username']) === false) {
 	exit();
 }
 */
-include 'patientInterface/includes/overall/footer.php'; ?>
+	?>
+	</div>
+	<?php include 'includes/footer.php'; ?>
+	
+</body>
+</html>

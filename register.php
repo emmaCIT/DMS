@@ -1,7 +1,7 @@
 <?php 
 include 'core/init.php';
 logged_in_redirect();
-include 'includes/overall/header.php';
+
 
 if (empty($_POST) === false) {
 	$required_fields = array('username', 'password', 'password_again', 'first_name', 'email');
@@ -36,51 +36,61 @@ if (empty($_POST) === false) {
 }
 
 ?>
-<h1>Register</h1>
+
+<!DOCTYPE HTML>
+<html>
+
+	<?php include 'includes/head.php'; ?>
+	<body>
+			<?php include 'includes/header.php'; ?>
+		<div id="container">
+			<?php include 'includes/aside.php'; ?>
+				<h1>Register</h1>
 
 <?php
-if (isset($_GET['success']) && empty($_GET['success'])) {
-	echo 'You\'ve been registered successfully! Please check your email to activate your account.';
-}else {
-	if (empty($_POST) === false && empty($errors) === true) {
-		$register_data = array(
-				'username' 		=> $_POST['username'],
-				'password' 		=> $_POST['password'],
-				'first_name'	=> $_POST['first_name'],
-				'last_name'		=> $_POST['last_name'],
-				'email' 		=> $_POST['email'],
-				'email_code' 	=> md5($_POST['username'] + microtime())
-		);
-			register_user($register_data);
-			header('Location: register.php?success');
-			exit();
-	} else if (empty($errors) === false){
-		echo output_errors($errors);
-	}
-?>
+	if (isset($_GET['success']) && empty($_GET['success'])) {
+		echo 'You\'ve been registered successfully! Please check your email to activate your account.';
+	}else {
+		if (empty($_POST) === false && empty($errors) === true) {
+			$register_data = array(
+					'username' 		=> $_POST['username'],
+					'password' 		=> $_POST['password'],
+					'first_name'	=> $_POST['first_name'],
+					'last_name'		=> $_POST['last_name'],
+					'email' 		=> $_POST['email'],
+					'email_code' 	=> md5($_POST['username'] + microtime())
+			);
+				register_user($register_data);
+				header('Location: register.php?success');
+				exit();
+		} else if (empty($errors) === false){
+			echo output_errors($errors);
+		}
+	?>
 
-<form action="" method="post">
-	<ul>
-		<li>Username*: <br> <input type="text" name="username">
-		</li>
-		<li>Password*: <br> <input type="password" name="password">
-		</li>
-		<li>Password again*: <br> <input type="password" name="password_again">
-		</li>
-		<li>First name*: <br> <input type="text" name="first_name">
-		</li>
-		<li>Last name: <br> <input type="text" name="last_name"> <!-- Don't forget to use the html5 email field that enables clients side validation -->
-		</li>
-		<li>Email address*: <br> <input type="text" name="email">
-		</li>
-		<li><input type="submit" value="Register"></li>
+	<form action="" method="post">
+		<ul>
+			<li>Username*: <br> <input type="text" name="username">
+			</li>
+			<li>Password*: <br> <input type="password" name="password">
+			</li>
+			<li>Password again*: <br> <input type="password" name="password_again">
+			</li>
+			<li>First name*: <br> <input type="text" name="first_name">
+			</li>
+			<li>Last name: <br> <input type="text" name="last_name"> <!-- Don't forget to use the html5 email field that enables clients side validation -->
+			</li>
+			<li>Email address*: <br> <input type="text" name="email">
+			</li>
+			<li><input type="submit" value="Register"></li>
+	
+		</ul>
+	</form>
+	<?php } ?>
+</div>
+<?php include 'includes/footer.php'; ?>
+</body>
 
-	</ul>
-</form>
-
-<?php
-}
-include 'includes/overall/footer.php'; ?>
-
+</html>
 
    

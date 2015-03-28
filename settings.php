@@ -1,7 +1,6 @@
 <?php
 include 'core/init.php';
 protect_page();
-include 'includes/overall/header.php';
 
 if (empty($_POST) === false) {
 	$required_fields = array('first_name', 'email');
@@ -22,7 +21,15 @@ if (empty($_POST) === false) {
 }
 
 ?>
-<h1>Settings</h1>
+
+<!DOCTYPE HTML>
+<html>
+	<?php include 'includes/head.php'; ?>
+<body>
+    		<?php include 'includes/headerPat.php'; ?>
+    <div id="container">
+        <?php include 'includes/aside.php';?>
+		<h1>Settings</h1>
 
 <?php
 if(isset($_GET['success']) === true && empty($_GET['success']) === true) {
@@ -60,11 +67,13 @@ if(isset($_GET['success']) === true && empty($_GET['success']) === true) {
 				</li>
 			</ul>
 		</form>
-	
-<?php
-}
-include 'includes/overall/footer.php'; 
-?>
+		
+	</div>
+<?php include 'includes/footer.php'; ?>
+</body>
+<?php } ?>
+
+</html>
 
 
 
