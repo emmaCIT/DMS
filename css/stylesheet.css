@@ -28,15 +28,14 @@ p {
     padding:0;
     margin:0 0 20px 0;
 }
-a:link, a:visited {
-    text-decoration:underline;
-    color:#000;
+a:visited {
+	 color:#000;
 }
 a:hover {
     text-decoration:none;
 }
 ul li {
-    padding:10px 0;
+    padding:15px 0;
 }
 ul li input[type="text"], ul li input[type="password"] {
     width:200px;
@@ -91,15 +90,26 @@ nav {
     float:left;
     font-size: 17px;
     padding-top: 10px;
-    padding-bottom: 5px;
+    padding-bottom: 5px;	
 }
 nav ul {
     margin:0;
 }
+
 nav ul li {
-    display:inline;
+    display:inline-block;
     margin-right:10px;
     padding: 5px 36px;
+    background: #fff;
+    cursor: pointer;
+}
+
+nav ul li:hover{
+	background: #555;
+  	color: #fff;
+}
+nav ul li a:hover{
+  	color: #fff;
 }
 nav ul li a {
     text-decoration:none;
@@ -111,6 +121,19 @@ nav ul li a.last {
     border-right:0;
 }
 
+.profile{
+	/*border: 1px dashed #ccc;
+	box-shadow:1px 0px 8px 1px #2b2b2b inset; */
+	width: 190px;
+	background: #f9f9f9;
+	padding: 10px;
+	
+}
+
+.profile img{
+	width: 100%;
+}
+
 /* Aside */
 aside {
     width:260px;
@@ -118,10 +141,7 @@ aside {
     border-left:1px dashed #aaa;
     padding-left:15px;
 }
-/* Login */
-#login li.link {
-    margin-top:5px;
-}
+
 /* Footer */
 footer {
     border-top:1px dashed #ddd;

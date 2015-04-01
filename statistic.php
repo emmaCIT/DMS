@@ -1,22 +1,19 @@
 <?php
 include 'core/init.php';
+protect_page();
 ?>
 
 <!DOCTYPE HTML>
 <html>
-	
 	<?php include 'includes/head.php'; ?>
-	<body>
-    		<?php include 'includes/header.php'; ?>
+<body>
+    <?php include 'includes/headerPat.php'; ?>
     <div id="container">
         <?php include 'includes/aside.php';?>
-			<h1>Welcome</h1>
-			<p>to the Diabetes Management System.</p>
+        <h1>Statistic</h1>
+		</div>
 		
-	</div>
-	
-	<?php include 'includes/footer.php';?>
+<?php include 'includes/footer.php'; ?>
 
-	
 </body>
 </html>

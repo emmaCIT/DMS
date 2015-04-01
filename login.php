@@ -1,6 +1,6 @@
 <?php
 include 'core/init.php';
-logged_in_redirect();
+logged_in_redirect2();
 
 if (empty($_POST) === false) {
 	$username = $_POST['username'];
@@ -24,7 +24,13 @@ if (empty($_POST) === false) {
 				$errors[] = 'That username/password combination is incorrect';
 		} else {
 			$_SESSION['user_id'] = $login;
-			header('Location: patient.php');
+			$data = loginRole($_SESSION['user_id']);
+			/*$_SESSION['role']=$data['type'];*/ //another way to do this function.
+			if($data['type'] == 0){
+			     header('Location: patient.php');
+			}else if ($data['type'] == 1) {
+				header('Location: doctor.php');
+			}
 			exit();
 		}
    }

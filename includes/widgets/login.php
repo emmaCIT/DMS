@@ -7,7 +7,7 @@
 				<li>Password:<br> <input type="password" name="password"></li>
 				<li><input type="submit" value="Log in"></li>
 				<li><a href ="register.php">Register</a></li>
-				<li>Forgot your <a href ="recover.php?mode=username">Username </a>or <a href ="recover.php?mode=password">Password?</a></li>
+				<li>Forgot your <a href ="recover.php?mode=username">Username</a> or <a href ="recover.php?mode=password">Password</a>?</li>
 			</ul>
 		</form>
 	</div>

@@ -1,6 +1,6 @@
 <?php 
 include 'core/init.php';
-logged_in_redirect();
+logged_in_redirect2();
 
 
 if (empty($_POST) === false) {
@@ -32,6 +32,7 @@ if (empty($_POST) === false) {
 		if(email_exists($_POST['email']) === true) {
 			$errors[] = 'Sorry, the email \'' . $_POST['email'] . '\' is already in use';
 		}
+		
 	}
 }
 
@@ -82,15 +83,20 @@ if (empty($_POST) === false) {
 			</li>
 			<li>Email address*: <br> <input type="text" name="email">
 			</li>
+			<li>I am a*:
+				<select name="type" <?php if ($user_data['type'] == 1) { echo 'checked="checked"'; } ?>>
+					<option value="patient">Patient</option>
+					<option value="doctor">Doctor</option>
+				</select>
+			</li>
 			<li><input type="submit" value="Register"></li>
-	
 		</ul>
 	</form>
+	
 	<?php } ?>
 </div>
 <?php include 'includes/footer.php'; ?>
 </body>
-
 </html>
 
    

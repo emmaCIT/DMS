@@ -36,7 +36,7 @@ if(isset($_GET['success']) === true && empty($_GET['success']) === true) {
 	echo 'Your details have been updated!';
 } else {
 	if(empty($_POST) === false && empty($errors) === true) {
-		//update patient details
+		//update user's details
 		$update_data = array(
 				'first_name'	=> $_POST['first_name'],
 				'last_name'		=> $_POST['last_name'],
@@ -68,11 +68,11 @@ if(isset($_GET['success']) === true && empty($_GET['success']) === true) {
 			</ul>
 		</form>
 		
-	</div>
+<?php } ?>
+</div> 
+
 <?php include 'includes/footer.php'; ?>
 </body>
-<?php } ?>
-
 </html>
 
 

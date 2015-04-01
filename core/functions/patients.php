@@ -1,8 +1,14 @@
 <?php
-/* function is_admin($user_id) {
-	$user_id = (int) $user_id;
-	return (mysql_result(mysql_query("SELECT COUNT(`user_id`) FROM `users` WHERE `user_id` = $user_id AND `type` = 1"), 0) == 1) ? true : false;
-} */
+function change_profile_image($user_id, $file_temp, $file_extn) {
+	$file_path = 'image/profile/' . substr(md5(time()), 0, 10) . '.' . $file_extn;
+	move_uploaded_file($file_temp, $file_path);
+	mysql_query("UPDATE `users` SET `profile` = '" . mysql_real_escape_string($file_path) . "' WHERE `user_id` = " . (int)$user_id);
+}
+
+function loginRole($login){
+	
+	return mysql_fetch_assoc(mysql_query("SELECT * FROM `users` WHERE `user_id` = $login"));
+}
 
 function recover($mode, $email) {
 	$mode 		 = sanitize($mode);

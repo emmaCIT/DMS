@@ -10,10 +10,7 @@ include 'core/init.php';
     		<?php include 'includes/header.php'; ?>
     <div id="container">
         <?php include 'includes/aside.php';?>
-        
-        	<h1>Activate</h1>
-        	<p>Activation Page.</p>
-
+               
     <?php
 		if (isset($_GET['success']) === true && empty($_GET['success']) === true) {
 	?>
@@ -44,7 +41,7 @@ include 'core/init.php';
 			header('Location: login.php');
 			exit();
 	}
-	//include 'includes/overall/footer.php';
+
 	?>
 	</div>
 	<?php include 'includes/footer.php' ;?>
