@@ -1,18 +1,17 @@
-<?php 
-	 include 'core/init.php';
-	 protect_page();
+<?php
+include 'core/init.php';
+protect_page();
 ?>
 
 <!DOCTYPE HTML>
 <html>
-	
 	<?php include 'includes/docHead.php'; ?>
 <body>
     		<?php include 'includes/headerDoc.php'; ?>
     <div id="container">
         <?php include 'includes/aside.php';?>
         
-        <div class="left-container">
+	        <div class="left-container">
 					<?php
 					if (isset($_FILES['profile']) === true) {
 						if (empty($_FILES['profile'] ['name']) === true) {
@@ -73,8 +72,9 @@
 				</div> <!-- end #center-container--> 	
 				
 	</div> <!-- end #container-->
-      
-      <?php include 'includes/footer.php';?>
-
+	
+	
+	<?php include 'includes/footer.php'; ?>
+	
 </body>
 </html>

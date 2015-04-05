@@ -28,7 +28,7 @@ if(empty($_POST) === false) {
 	
 	<?php include 'includes/head.php'; ?>
 <body>
-    		<?php include 'includes/headerPat.php'; ?>
+    		<?php include 'includes/neutral.php'; ?>
     <div id="container">
         <?php include 'includes/aside.php';?>
         

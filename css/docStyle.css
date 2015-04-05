@@ -83,7 +83,7 @@ textarea.infor2{
 	width: 800px;
 }
 /* ------------------------------
-For Personal Notes Styling
+Display Styling
 ------------------------------ */
 div.fieldSet {
 	border: solid black thin;
@@ -98,7 +98,7 @@ fieldSet {
 }
 legend {
 	font-size: 20px;
-	background-color: green;
+	background-color: lightslategray;
 	color: white;
 	width: 98%;
 	padding: 5px;
@@ -155,18 +155,6 @@ fieldset p {
 	clear: both;
 	padding: 5px;
 }
-
-.notebutton {
-	margin-top: 30px;
-	float: left;
-	margin-left: 150px;
-}
-.recordbutton {
-	margin-top: 30px;
-	margin-left: 150px;
-	padding:20px;
-	
-}
 /* Headers */
 h1 {
     font-size:1.8em;
@@ -177,7 +165,7 @@ h2 {
 
 /* Containers */
 body {
-    background:lightslategray;
+    background:#E3CAA1;
     font-family:Arial;
     font-size:0.8em;
 }
@@ -247,8 +235,8 @@ nav ul li a.last {
     border-right:0;
 }
 /* ------------------------------
-left-content styles
------------------------------- */	
+profile image left-container styles
+------------------------------ */
 .left-container{
 	box-shadow:1px 0px 8px 1px #2b2b2b inset; 
 	width: 190px;
@@ -298,41 +286,4 @@ footer {
 /* Misc */
 .clear {
     clear:both;
-}
-
-/* ------------------------------
-table styles
------------------------------- */	
-table, th, td {
-	border: 1px solid black;
-	width:100%;
-	text-align:right;
-	border:1px solid green;
-	padding:9px;
-	border:5px solid gray;
-	margin:auto;
-	border-collapse: collapse;
-}
-th{	
-	background-color:green;
-	color:white;
-	text-align: center;
-}
-
-td{
-	text-align: center;
-}
-.row1 {
-	background-color:#FFFFCC;
-	font-weight: bold;
-	color:black;
-	text-align: center;
-}
-.row2 {
-	background-color:white;
-	color:black;
-	text-align: center;
-}
-.tablestyle{
-	width:100%;
 }

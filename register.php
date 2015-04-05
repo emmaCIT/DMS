@@ -4,7 +4,8 @@ logged_in_redirect2();
 
 
 if (empty($_POST) === false) {
-	$required_fields = array('username', 'password', 'password_again', 'first_name', 'email');
+	$required_fields = array('username', 'password', 'password_again', 'first_name', 'DOB', 'gender', 'phone_number', 'email', 'address');
+	//echo '<pre>', print_r($_POST, true), '</pre>';
 	foreach($_POST as $key=>$value) {
 		if(empty($value) && in_array($key, $required_fields) === true) {
 			$errors[] = 'Fields marked with an asterisk are required';
@@ -32,6 +33,15 @@ if (empty($_POST) === false) {
 		if(email_exists($_POST['email']) === true) {
 			$errors[] = 'Sorry, the email \'' . $_POST['email'] . '\' is already in use';
 		}
+		if (preg_match("/^\d{10}$/", $_POST['phone_number']) === false) {
+			$errors[] = 'Your phone number must be 10 digits.';
+		}
+		if(preg_match("/\\s/", $_POST['phone_number']) == true) {
+			$errors[] = 'Your phone number must not contain any spaces.';
+		}
+		if(phone_exists($_POST['phone_number']) === true) {
+			$errors[] = 'Sorry, the phone number \'' . $_POST['phone_number'] . '\' is already in use';
+		}
 		
 	}
 }
@@ -58,7 +68,11 @@ if (empty($_POST) === false) {
 					'password' 		=> $_POST['password'],
 					'first_name'	=> $_POST['first_name'],
 					'last_name'		=> $_POST['last_name'],
+					'DOB'			=> $_POST['DOB'],
+					'gender'		=> $_POST['gender'],
+					'phone_number'	=> $_POST['phone_number'],
 					'email' 		=> $_POST['email'],
+					'address'		=> $_POST['address'],
 					'email_code' 	=> md5($_POST['username'] + microtime())
 			);
 				register_user($register_data);
@@ -69,29 +83,7 @@ if (empty($_POST) === false) {
 		}
 	?>
 
-	<form action="" method="post">
-		<ul>
-			<li>Username*: <br> <input type="text" name="username">
-			</li>
-			<li>Password*: <br> <input type="password" name="password">
-			</li>
-			<li>Password again*: <br> <input type="password" name="password_again">
-			</li>
-			<li>First name*: <br> <input type="text" name="first_name">
-			</li>
-			<li>Last name: <br> <input type="text" name="last_name"> <!-- Don't forget to use the html5 email field that enables clients side validation -->
-			</li>
-			<li>Email address*: <br> <input type="text" name="email">
-			</li>
-			<li>I am a*:
-				<select name="type" <?php if ($user_data['type'] == 1) { echo 'checked="checked"'; } ?>>
-					<option value="patient">Patient</option>
-					<option value="doctor">Doctor</option>
-				</select>
-			</li>
-			<li><input type="submit" value="Register"></li>
-		</ul>
-	</form>
+		<?php include 'pat_aside_panel/registerform.php';?>
 	
 	<?php } ?>
 </div>

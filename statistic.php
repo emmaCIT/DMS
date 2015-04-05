@@ -9,7 +9,7 @@ protect_page();
 <body>
     <?php include 'includes/headerPat.php'; ?>
     <div id="container">
-        <?php include 'includes/aside.php';?>
+       
         <h1>Statistic</h1>
 		</div>
 		

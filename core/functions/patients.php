@@ -102,6 +102,10 @@ function user_exists($username) {
 	return (mysql_result(mysql_query("SELECT COUNT(`user_id`) FROM `users` WHERE `username` = '$username'"), 0) == 1) ? true : false;
 }
 
+function phone_exists($phonenumber) {
+	$phonenumber = sanitize($phonenumber);
+	return (mysql_result(mysql_query("SELECT COUNT(`user_id`) FROM `users` WHERE `phone_number` = '$phonenumber'"), 0) == 1) ? true : false;
+}
 function email_exists($email) {
 	$email = sanitize($email);
 	return (mysql_result(mysql_query("SELECT COUNT(`user_id`) FROM `users` WHERE `email` = '$email'"), 0) == 1) ? true : false;
@@ -129,5 +133,4 @@ function login($username, $password){
 	$password = md5($password);
 	return (mysql_result(mysql_query("SELECT COUNT(`user_id`) FROM `users` WHERE `username` = '$username' AND `password` = '$password'"), 0) == 1) ? $user_id : false;
 }
-
 ?>
