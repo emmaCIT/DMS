@@ -46,13 +46,17 @@ if (empty($_POST) === false) {
 <body>
     		<?php include 'includes/header.php'; ?>
     <div id="container">
-        <?php include 'includes/aside.php';?>
+        <?php include 'includes/aside.php'; ?>
 
        
 <?php if(empty($errors) === false){ ?>
 	<h2> We tried to log you in, but...</h2>
 <?php echo output_errors($errors); } ?>
-</div>
+	
+	<div class="decorate"></div> <!-- end #decorate-->
+</div><!-- end #container-->
+
+
 <?php include 'includes/footer.php'; ?>
 
 </body>

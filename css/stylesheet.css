@@ -195,6 +195,16 @@ header {
     min-height:500px;
     border-radius:5px 5px 0 0;
 }
+.decorate{
+	background-size: cover;	
+	width: 990px;
+	height:190px;
+	background-color: #f9f9f9;
+	background-image: url('../image/diabetes-logo.jpg');
+	background-repeat: no-repeat;
+	float: left;
+	
+}
 footer {
     border-radius:0 0 5px 5px;
     text-align: center;
@@ -256,7 +266,7 @@ left-content styles
 	margin-bottom: 5px;
 	background-color: #f9f9f9;
 	padding: 10px;
-	background-image: url(../image/blank_profile.jpg);
+	background-image: url('../image/blank_profile.jpg');
 	background-repeat: no-repeat;
 	float: left;
 }

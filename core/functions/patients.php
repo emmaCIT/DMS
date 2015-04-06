@@ -4,10 +4,34 @@ function change_profile_image($user_id, $file_temp, $file_extn) {
 	move_uploaded_file($file_temp, $file_path);
 	mysql_query("UPDATE `users` SET `profile` = '" . mysql_real_escape_string($file_path) . "' WHERE `user_id` = " . (int)$user_id);
 }
+/*
+ * This function is used to notify patients to come in for check-ups.
+ * Doctor sends email to his/her patients that wants to be notified through their email address.
+ */
+function mail_users($subject, $message) {
+	$query = mysql_query("SELECT `email`, `first_name` FROM `users` WHERE `allow_email` = 1 AND `type` = 0");
+	while (($row = mysql_fetch_assoc($query)) !== false) {
+		email($row['email'], $subject, "Hello " . $row['first_name'] . ",\n\n" . $message . "\n\n- Diabetes Management System");
+	}
+}
 
 function loginRole($login){
 	
 	return mysql_fetch_assoc(mysql_query("SELECT * FROM `users` WHERE `user_id` = $login"));
+}
+
+/*
+ * This function is for displaying the number of patients that are registered with the Diabetes Management System.
+ * This information is displayed only to the Doctors.
+ */
+function totalpatient_count(){
+	return mysql_result(mysql_query("SELECT COUNT(`user_id`) FROM `users` WHERE `active` = 1 AND `type` = 0"), 0);
+}
+/*
+ * This function is for displaying the total number of users, using the Diabetes Management System.
+ */
+function totaluser_count(){
+	return mysql_result(mysql_query("SELECT COUNT(`user_id`) FROM `users` WHERE `active` = 1"), 0);
 }
 
 function recover($mode, $email) {
@@ -72,7 +96,7 @@ function register_user($register_data) {
 
 
 /*
- * The code below is for logging into the Health Management System and displaying the User's Data.
+ * The code below is for logging into the Diabetes Management System and displaying the User's Data.
  */
 function patient_data($user_id){
 	$data = array();

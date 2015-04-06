@@ -45,6 +45,7 @@ if(isset($_GET['success']) === true && empty($_GET['success']) === true) {
 				'phone_number' 		=> $_POST['phone_number'],
 				'email' 			=> $_POST['email'],
 				'address' 			=> $_POST['address'],
+				'allow_email' 	=> ($_POST['allow_email'] == 'on') ? 1 : 0
 		);
 		
 		update_user($session_user_id, $update_data);
@@ -71,6 +72,9 @@ if(isset($_GET['success']) === true && empty($_GET['success']) === true) {
 				</li>
 				<li>Address*: <br> 
 					<textarea name="address" class="reg2"><?php echo $user_data['address']; ?></textarea>
+				</li>
+				<li>
+				<input type="checkbox" name="allow_email" <?php if ($user_data['allow_email'] == 1 AND $user_data['type'] == 0) { echo 'checked="checked"'; } ?>> Would you like to receive email from us?
 				</li>
 				<li> 
 					<input type="submit" value="Update">

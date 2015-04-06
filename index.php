@@ -13,7 +13,10 @@ include 'core/init.php';
 			<h1>Welcome</h1>
 			<p>to the Diabetes Management System.</p>
 		
-	</div>
+		<div class="decorate">
+		
+		</div><!-- end #decorate-->
+	</div><!-- end #container-->
 	
 	<?php include 'includes/footer.php';?>
 
