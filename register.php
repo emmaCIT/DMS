@@ -33,7 +33,7 @@ if (empty($_POST) === false) {
 		if(email_exists($_POST['email']) === true) {
 			$errors[] = 'Sorry, the email \'' . $_POST['email'] . '\' is already in use';
 		}
-		if (preg_match("/^\d{10}$/", $_POST['phone_number']) === false) {
+		if (preg_match("/^\d{10}$/", $_POST['phone_number']) === false) {//check here
 			$errors[] = 'Your phone number must be 10 digits.';
 		}
 		if(preg_match("/\\s/", $_POST['phone_number']) == true) {

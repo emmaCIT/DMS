@@ -1,4 +1,12 @@
 <?php
+function queryResult($SQLString){
+	return mysql_fetch_assoc(mysql_query("SELECT * FROM `bloodglucoselevel` WHERE `user_id` = $SQLString"));
+	
+}
+
+/*
+ * This function is used to display the profile image of the users.
+ */
 function change_profile_image($user_id, $file_temp, $file_extn) {
 	$file_path = 'image/profile/' . substr(md5(time()), 0, 10) . '.' . $file_extn;
 	move_uploaded_file($file_temp, $file_path);
@@ -52,7 +60,9 @@ function recover($mode, $email) {
 		email($email, 'Your password recovery', "Hello " . $user_data['first_name'] . ", \n\nYour new password is: " . $generated_password . "\n\n-Diabetes Management System");
 	}
 }
-
+/*
+ * Updating users' information in the database.
+ */
 function update_user($user_id, $update_data) {
 	$update = array();
 	array_walk($update_data, 'array_sanitize');
@@ -61,6 +71,19 @@ function update_user($user_id, $update_data) {
 		$update[] = '`' . $field . '` = \'' . $data . '\'';
 	}
 	mysql_query("UPDATE `users` SET " . implode(', ', $update) . " WHERE `user_id` = $user_id");
+}
+
+/*
+ * Inserting patient's blood glucose level records into the database.
+ */
+function insert_bloodsugarlevel($id, $insert_data) {
+	$insert = array();
+	array_walk($insert_data, 'array_sanitize');
+
+	foreach ($insert_data as $field=>$data) {
+		$insert[] = '`' . $field . '` = \'' . $data . '\'';
+	}
+	mysql_query("INSERT `bloodglucoselevel` SET " . implode(', ', $insert) . " WHERE `id` = $id");
 }
 
 function activate($email, $email_code) {

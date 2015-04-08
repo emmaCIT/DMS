@@ -346,3 +346,25 @@ td{
 .tablestyle{
 	width:100%;
 }
+
+table.record, th.record, td.record
+	{
+		border: 1px solid black;
+		width:50%;
+		text-align:left;
+		font-weight:bold;
+		border:1px solid green;
+		padding:10px;
+		border:5px solid gray;
+		margin:auto;
+		border-collapse: separate;
+	}
+	td.record1{
+		text-align:center;
+	}
+	textarea.record{
+	width: 200px;
+	float: left;
+	padding: 10px;
+	height:100px;
+}
