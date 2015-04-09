@@ -52,21 +52,17 @@ protect_page();
 				
 				
 				<!-- This is to display the Patient's Information Details -->
-				<?php
-	
-					$profile_data 	= patient_data($session_user_id, 'user_id', 'username', 'password', 'first_name', 'last_name', 'DOB', 'gender', 'phone_number', 'address', 'email', 'password_recover', 'type', 'profile');
-				?>
 				<div class="center-container">
 				<fieldset> 
 						<legend>Personal Information</legend>
-						<p><label class="field" for="username">Username:</label><input type="text" name="username" class="infor" value="<?php echo $profile_data['username']; ?>"/></p>
-						<p><label class="field" for="firstname">First Name:</label><input type="text" name="firstname" class="infor" value="<?php echo $profile_data['first_name']; ?>" /></p>
-						<p><label class="field" for="lastname">Last Name:</label><input type="text" name="lastname" class="infor" value="<?php echo $profile_data['last_name']; ?>" /></p>
-						<p><label class="field" for="dob">Date of Birth:</label><input type="text" name="dob" class="infor" value="<?php echo $profile_data['DOB']; ?>" /></p>
-						<p><label class="field" for="gender">Gender:</label><input type="text" name="gender" class="infor" value="<?php echo $profile_data['gender']; ?>" /></p>
-						<p><label class="field" for="phone_number">Phone Number:</label><input type="text" name="phone_number" class="infor" value="<?php echo $profile_data['phone_number']; ?>" /></p>
-						<p><label class="field" for="email">Email:</label><input type="text" name="email" class="infor" value="<?php echo $profile_data['email']; ?>" /></p>
-						<p><label class="field" for="address">Address:</label><textarea name="address" class="infor2" ><?php echo $profile_data['address']; ?></textarea></p>
+						<p><label class="field" for="username">Username:</label><input type="text" name="username" class="infor" value="<?php echo $user_data['username']; ?>"/></p>
+						<p><label class="field" for="firstname">First Name:</label><input type="text" name="firstname" class="infor" value="<?php echo $user_data['first_name']; ?>" /></p>
+						<p><label class="field" for="lastname">Last Name:</label><input type="text" name="lastname" class="infor" value="<?php echo $user_data['last_name']; ?>" /></p>
+						<p><label class="field" for="dob">Date of Birth:</label><input type="text" name="dob" class="infor" value="<?php echo $user_data['DOB']; ?>" /></p>
+						<p><label class="field" for="gender">Gender:</label><input type="text" name="gender" class="infor" value="<?php echo $user_data['gender']; ?>" /></p>
+						<p><label class="field" for="phone_number">Phone Number:</label><input type="text" name="phone_number" class="infor" value="<?php echo $user_data['phone_number']; ?>" /></p>
+						<p><label class="field" for="email">Email:</label><input type="text" name="email" class="infor" value="<?php echo $user_data['email']; ?>" /></p>
+						<p><label class="field" for="address">Address:</label><textarea name="address" class="infor2" ><?php echo $user_data['address']; ?></textarea></p>
 						
 				</fieldset>
 				</div> <!-- end #center-container--> 	

@@ -76,14 +76,13 @@ function update_user($user_id, $update_data) {
 /*
  * Inserting patient's blood glucose level records into the database.
  */
-function insert_bloodsugarlevel($id, $insert_data) {
-	$insert = array();
+function insert_bloodsugarlevel($user_id,$insert_data) {
 	array_walk($insert_data, 'array_sanitize');
-
-	foreach ($insert_data as $field=>$data) {
-		$insert[] = '`' . $field . '` = \'' . $data . '\'';
-	}
-	mysql_query("INSERT `bloodglucoselevel` SET " . implode(', ', $insert) . " WHERE `id` = $id");
+		
+	$fields = '`' . implode('`, `', array_keys($insert_data)) . '`';
+	$data = '\'' . implode('\', \'', $insert_data) . '\'';
+	
+	mysql_query("INSERT INTO `bloodglucoselevel` ($fields) VALUES ($data)");
 }
 
 function activate($email, $email_code) {
@@ -138,7 +137,6 @@ function patient_data($user_id){
 	}
 
 }
-
  
 function logged_in() {
 	return (isset($_SESSION['user_id'])) ? true : false;

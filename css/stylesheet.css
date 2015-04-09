@@ -195,6 +195,7 @@ header {
     min-height:500px;
     border-radius:5px 5px 0 0;
 }
+
 .decorate{
 	background-size: cover;	
 	width: 990px;
@@ -344,27 +345,50 @@ td{
 	text-align: center;
 }
 .tablestyle{
+	width: 100%;
+	display:block;
+	overflow: auto;
+	overflow: scroll;
+}
+.tablestyle table{
+	width: 100%;
+
+}
+table.record, th.record, td.record tr.record{
+	border: 1px solid black;
+	width:100%;
+	table-layout: fixed;
+	text-align:left;
+	font-weight:bold;
+	border:1px solid green;
+	padding:10px;
+	border:5px solid gray;
+	margin:auto;
+	border-collapse: separate;
+}
+td.record1{
+	text-align:center;
 	width:100%;
 }
-
-table.record, th.record, td.record
-	{
-		border: 1px solid black;
-		width:50%;
-		text-align:left;
-		font-weight:bold;
-		border:1px solid green;
-		padding:10px;
-		border:5px solid gray;
-		margin:auto;
-		border-collapse: separate;
-	}
-	td.record1{
-		text-align:center;
-	}
-	textarea.record{
+textarea.record{
 	width: 200px;
 	float: left;
 	padding: 10px;
 	height:100px;
+}
+input[type=date]{
+    width: 125px;
+} 
+input.details{
+	 width: 40px;
+}
+input.details1{
+    width: 125px;
+}
+.recordfooter{
+	background:#fff;
+    width: 95%;
+    margin:0 auto;
+    padding:20px;
+    text-align: center;
 }

@@ -10,12 +10,9 @@ if (empty($_POST) === false) {
 			break 1;
 		}
 	}
-
+	
 	/*if (empty($errors) === true) {
-		if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) === false) {
-			$errors[] = 'A valid email address is required';
-		}
-		if (preg_match("^[1-9]\d*$", $_POST['bfb'], $_POST['afb'], $_POST['bfl'], $_POST['afl'], $_POST['bfd'], $_POST['afd'], $_POST['bfbed'], $_POST['night'], $_POST['breakfast'], $_POST['lunch'], $_POST['dinner'], $_POST['bedtime']) === false) 
+		if (preg_match("/^([1-9]|[1-9]\.[0.9]{1,2})?$/", $_POST['bfb'], $_POST['afb'], $_POST['bfl'], $_POST['afl'], $_POST['bfd'], $_POST['afd'], $_POST['bfbed'], $_POST['night'], $_POST['breakfast'], $_POST['lunch'], $_POST['dinner'], $_POST['bedtime']) === false) 
 		{
 			$errors[] = 'A valid number is required.';
 		}
@@ -30,7 +27,6 @@ if (empty($_POST) === false) {
 <body>
     		<?php include 'includes/headerPat.php'; ?>
     <div id="container">
-        
 		<h1>Blood Glucose Level Record Entry</h1>
 
 <?php
@@ -38,8 +34,9 @@ if(isset($_GET['success']) === true && empty($_GET['success']) === true) {
 	echo 'Your details have been saved!';
 } else {
 	if(empty($_POST) === false && empty($errors) === true) {
-		//update user's details
+		//update patient's blood glucose level record details
 		$insert_data = array(
+				'patient_id' 	=> $session_user_id,
 				'date'			=> $_POST['date'],
 				'bfb'			=> $_POST['bfb'],
 				'afb' 			=> $_POST['afb'],
@@ -55,7 +52,7 @@ if(isset($_GET['success']) === true && empty($_GET['success']) === true) {
 				'bedtime' 		=> $_POST['bedtime'],
 				'comments' 		=> $_POST['comments']
 		);
-		
+
 		insert_bloodsugarlevel($session_user_id, $insert_data);
 		header('Location: addglucose.php?success');
 		exit();
@@ -64,6 +61,7 @@ if(isset($_GET['success']) === true && empty($_GET['success']) === true) {
 		echo output_errors($errors);
 	}
 	?>
+	
 	<form action="addglucose.php" method="post">
 	
 		<table border='1' class="record">
@@ -135,7 +133,10 @@ if(isset($_GET['success']) === true && empty($_GET['success']) === true) {
 		</form> <!-- end #form-->
 		
 <?php } ?>
-<a href="recorddetails.php">View Blood Glucose Level Records</a>
+<p>
+<div align="center">
+<b><a href="recorddetails.php">View Blood Glucose Level Records</a></b>
+</div>
 </div> <!-- end #container-->
 
 <?php include 'includes/footer.php'; ?>

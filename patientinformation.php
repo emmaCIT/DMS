@@ -10,10 +10,10 @@
 <body>
     		<?php include 'includes/headerDoc.php'; ?>
     <div id="container">
-          
-          <a title="print screen" alt="print screen" onclick="window.print();"target_blank" style="cursor:pointer;">print button</a>
-          
-
+       
+        
+       
+		
 	</div> <!-- end #container-->
       
       <?php include 'includes/footer.php';?>
