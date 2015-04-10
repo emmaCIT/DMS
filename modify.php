@@ -19,21 +19,17 @@ protect_page ();
 			
 			if (isset($_POST['delete']))
 			{
-				$dvdID=$_POST['dvdID'];
-				$sql = "DELETE FROM dvd WHERE dvdID='$dvdID'";
+				$q = $_POST['delete'];
+				$bloodglucoselevel=$session_user_id;
+				$sql = "DELETE FROM bloodglucoselevel WHERE id='$bloodglucoselevel'";
 			
-				if (!mysqli_query($DBConnection, $sql))
-				{
-					$error = 'Error deleting the dvd: ' . mysqli_error($DBConnection);
-					include 'error.html.php';
-					exit();
-				}
-				header('Location: .');
-				exit();
+				mysql_query($sql);
+				
 			}
 			
 			
 			
+			/*
 			
 			if (isset($_POST['update']))
 			{
@@ -80,7 +76,7 @@ protect_page ();
 						'director' => $row['director'],'description' => $row['description']);
 			}
 			
-			include'index.php';
+			*/
 			
 			?>
 		</div> <!-- end #tablestyle-->

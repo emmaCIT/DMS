@@ -13,7 +13,8 @@ if (empty($_POST) === false) {
 
 	
 }
-
+	$query = "SELECT * FROM bloodglucoselevel WHERE `patient_id` = $session_user_id";
+	$QueryResult = mysql_query($query);
 ?>
 
 <!DOCTYPE HTML>
@@ -59,11 +60,7 @@ if (empty($_POST) === false) {
 		?>
 	
 		<!-- Now ADD Blood Glucose Level Table -->
-		<div class="tablestyle">
-		<?php
-	
-					$data 	= "SELECT * FROM `bloodglucoselevel`";
-				?>	
+		<div class="tablestyle">	
 			<?php		
 				//create html table and populate with blood glucose level records.
 				echo "<table>";
@@ -94,29 +91,29 @@ if (empty($_POST) === false) {
 				 	"<td></td>".
 				 	"<td></td></tr>\n";
 			
-			//for($report = mysqli_fetch_assoc($SQLString)){
+			while($report = mysql_fetch_assoc($QueryResult)){
 				echo "<form action=modify.php method=POST>";
 				echo "<tr class='row2'>";
-				echo  "<td align=left>" . "<input type=date name=date value=". $data['date']." </td>";
-				echo	"<td>" . "<input type=number class=details name=bfb value=" . $data['bfb'] . " </td>";
-				echo	"<td>" . "<input type=number class=details name=afb value=" . $user_data['afb'] . " </td>";
-				echo	"<td>" . "<input type=number class=details name=bfl value=" . $user_data['bfl'] . " </td>";
-				echo	"<td>" . "<input type=number class=details name=afl value=" . $user_data['afl'] . " </td>";
-				echo	"<td>" . "<input type=number class=details name=bfd value=" . $user_data['bfd'] . " </td>";
-				echo	"<td>" . "<input type=number class=details name=afd value=" . $user_data['afd'] . " </td>";
-				echo	"<td>" . "<input type=number class=details name=bfbed value=" . $user_data['bfbed'] . " </td>";
+				echo  "<td align=left>" . "<input type=date class=details2 name=date value=". $report['date']." </td>";
+				echo	"<td>" . "<input type=number class=details name=bfb value=" . $report['bfb'] . " </td>";
+				echo	"<td>" . "<input type=number class=details name=afb value=" . $report['afb'] . " </td>";
+				echo	"<td>" . "<input type=number class=details name=bfl value=" . $report['bfl'] . " </td>";
+				echo	"<td>" . "<input type=number class=details name=afl value=" . $report['afl'] . " </td>";
+				echo	"<td>" . "<input type=number class=details name=bfd value=" . $report['bfd'] . " </td>";
+				echo	"<td>" . "<input type=number class=details name=afd value=" . $report['afd'] . " </td>";
+				echo	"<td>" . "<input type=number class=details name=bfbed value=" . $report['bfbed'] . " </td>";
 				
-				echo	"<td>" . "<input type=number class=details name=night value=" . $user_data['night'] . " </td>";
-				echo	"<td>" . "<input type=number class=details name=breakfast value=" . $user_data['breakfast'] . " </td>";
-				echo	"<td>" . "<input type=number class=details name=lunch value=" . $user_data['lunch'] . " </td>";
-				echo	"<td>" . "<input type=number class=details name=dinner value=" . $user_data['dinner'] . " </td>";
-				echo	"<td>" . "<input type=number class=details name=bedtime value=" . $user_data['bedtime'] . " </td>";
-				echo	"<td>" . "<input type=text 	 class=details1 name=comments value=" . $user_data['comments'] . " </td>";
+				echo	"<td>" . "<input type=number class=details name=night value=" . $report['night'] . " </td>";
+				echo	"<td>" . "<input type=number class=details name=breakfast value=" . $report['breakfast'] . " </td>";
+				echo	"<td>" . "<input type=number class=details name=lunch value=" . $report['lunch'] . " </td>";
+				echo	"<td>" . "<input type=number class=details name=dinner value=" . $report['dinner'] . " </td>";
+				echo	"<td>" . "<input type=number class=details name=bedtime value=" . $report['bedtime'] . " </td>";
+				echo	"<td>" . "<input type=text 	 class=details1 name=comments value=" . $report['comments'] . " </td>";
 				echo	"<td>" . "<input type=submit name=update value=update />" . " </td>";
 				echo 	"<td>" . "<input type=submit name=delete value=delete />" . " </td>";
 				echo	"</tr>";
 				echo 	"</form>";
-			//}
+			}
 				
 				echo "</table>" ;
 				echo '<p/>';
@@ -129,7 +126,7 @@ if (empty($_POST) === false) {
 		
 	</div> <!-- end #container-->
        
-    <?php include 'includes/recordFooter.php';?>
+    <?php include 'includes/footer.php';?>
     
 </body>
 </html>

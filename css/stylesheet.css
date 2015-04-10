@@ -139,10 +139,22 @@ input.textbox2 {
 	box-shadow: 0 0 6px #666 inset;
 	color: #333;
 	float: left;
-	padding: 7px 10px;
 	width: 300px;
+	padding: 7px 10px;
 	outline: none; 
 }
+input.textbox3{
+    margin-top: 30px;
+	background: url('../image/date_icon.jpg') no-repeat scroll right center #FFFFFF;
+    border: 1px solid #666;
+	box-shadow: 0 0 6px #666 inset;
+	color: #333;
+	float: left;
+	width: 300px;
+	padding: 7px 10px;
+	pointer-events: none;
+	outline: none;
+} 
 textarea.textbox-300 {
 	width: 300px;
 	float: left;
@@ -350,25 +362,20 @@ td{
 	overflow: auto;
 	overflow: scroll;
 }
-.tablestyle table{
-	width: 100%;
-
-}
 table.record, th.record, td.record tr.record{
-	border: 1px solid black;
-	width:100%;
-	table-layout: fixed;
+	width:50%;
 	text-align:left;
 	font-weight:bold;
-	border:1px solid green;
-	padding:10px;
 	border:5px solid gray;
+	padding:10px;
 	margin:auto;
 	border-collapse: separate;
 }
+td.record{
+	text-align:left;
+}
 td.record1{
 	text-align:center;
-	width:100%;
 }
 textarea.record{
 	width: 200px;
@@ -376,19 +383,16 @@ textarea.record{
 	padding: 10px;
 	height:100px;
 }
-input[type=date]{
+.details2{
     width: 125px;
 } 
 input.details{
-	 width: 40px;
+	 width: 45px;
 }
 input.details1{
     width: 125px;
 }
-.recordfooter{
-	background:#fff;
-    width: 95%;
-    margin:0 auto;
-    padding:20px;
-    text-align: center;
+.jlist{
+	overflow: auto;
+	overflow: scroll;
 }

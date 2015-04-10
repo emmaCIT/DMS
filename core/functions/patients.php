@@ -1,9 +1,4 @@
 <?php
-function queryResult($SQLString){
-	return mysql_fetch_assoc(mysql_query("SELECT * FROM `bloodglucoselevel` WHERE `user_id` = $SQLString"));
-	
-}
-
 /*
  * This function is used to display the profile image of the users.
  */
@@ -83,6 +78,18 @@ function insert_bloodsugarlevel($user_id,$insert_data) {
 	$data = '\'' . implode('\', \'', $insert_data) . '\'';
 	
 	mysql_query("INSERT INTO `bloodglucoselevel` ($fields) VALUES ($data)");
+}
+
+/*
+ * Inserting patients Personal Notes into the database and retrieveing it for them.
+ */
+function insert_personalnotes($user_id, $insert_notes){
+	array_walk($insert_notes, 'array_sanitize');
+	
+	$fields = '`' . implode('`, `', array_keys($insert_notes)) . '`';
+	$data = '\'' . implode('\', \'', $insert_notes) . '\'';
+	
+	mysql_query("INSERT INTO `personalnotes` ($fields) VALUES ($data)");
 }
 
 function activate($email, $email_code) {

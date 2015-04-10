@@ -10,7 +10,7 @@
 <body>
     		<?php include 'includes/headerDoc.php'; ?>
     <div id="container">
-       
+       <?php include 'doc_aside_panel/patientinfor.php';?>
         
        
 		
