@@ -23,13 +23,13 @@ if (empty($_POST) === false) {
    	 <?php include 'pat_aside_panel/personalnote_aside.php';?>
 		
 		<div class="personalNote">
-		
+		<!-- if(isset($_POST['save_note']) === true && empty($errors) === true) { -->
 		<?php
-		if(isset($_GET['success']) === true && empty($_GET['success']) === true) {
-			echo 'Your details have been saved!';
-		} else {
-			if(empty($_POST) === false && empty($errors) === true) {
-				//update patient's blood glucose level record details
+			
+if(isset($_GET['success']) === true && empty($_GET['success']) === true) {
+	echo 'Your details have been saved!';
+} else {if(empty($_POST) === false && empty($errors) === true) {
+				//update patient's personal notes
 				$insert_notes = array(
 					'patient_id' 	=> $session_user_id,
 					'username' 		=> $user_data['username'],
@@ -40,41 +40,37 @@ if (empty($_POST) === false) {
 			);
 
 					insert_personalnotes($session_user_id, $insert_notes);
-					//header('Location: personalnotes.php?success');
-					//exit();
-		
+					header('Location: personalnotes.php?success');
+					exit();
+					
 		}else if (empty($errors) === false) {
 		echo output_errors($errors);
 		}
 		?>
 		
-
 	
 	  
-	 function myFunction() {
-		<?php  		
-					$query = "SELECT * FROM personalnotes WHERE `patient_id` = $session_user_id AND YEAR(date_created) = YEAR(NOW()) AND MONTH(date_created)=MONTH(NOW()) ";
-					$QueryResult = mysql_query($query);
-						
-					while($rep = mysql_fetch_assoc($QueryResult)){
-						echo "<form action= method=post>";
-				
-						echo  "<input type=date name=date_created value=". $rep['date_created']."";
-						 
-						echo 	"</form>";
-					}				
-					
-			
-					?>
-	 }
-	
-	 
-			 </div> <!-- end #personalNote-->
-
-
-	</div>
-   <?php } ?>
+	<form action="" method="post">
+				<div class="fieldSet">
+					<fieldset> 
+						<legend>Personal Notes</legend>
+						<p><label class="field" for="Date Created"><span>*</span>Date Created:</label><input type="date" name="date_created" value=" $report['date_created']" class="textbox2" /></p>
+						<p><label class="field" for="Last Updated"><span>*</span>Last Updated:</label><input type="datetime-local" name="last_updated" class="textbox3" /></p>
+						<p><label class="field" for="Title"><span>*</span>Title:</label><input type="text" name="title" class="textbox1" /></p>
+						<p><label class="field" for="Notes"><span>*</span>Notes:</label><textarea placeholder="Please enter your notes" name="notes" class="textbox-300"></textarea></p>
+										
+					</fieldset>
+					<div class="notebutton">
+						<button type="submit" name= "save_note" value="Save Note">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+						<!-- <input type="submit" name= "update" value="Update Note">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="submit" name= "delete" value="Delete Note"> -->
+					</div> <!-- end #button-->
+				</div> <!-- end #fieldSet-->
+			</form> <!-- end #form-->
+		</div> <!-- end #personalNote-->
+		</div>
+ 
    <?php include 'includes/footer.php'; ?>
-   
+   <?php  }?>
 </body>
 </html>

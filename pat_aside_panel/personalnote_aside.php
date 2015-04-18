@@ -6,7 +6,7 @@
  $result = mysql_query($sql);
 
  
- echo "<select  selected=selected onclick=myFunction() name='jlist' size='25' style='width: 260px;'>";
+ echo "<select  selected=selected name='jlist' size='25' style='width: 260px;'>";
 	while ($row = mysql_fetch_array($result)) {
 		echo "<option value='" . $row['date_created']." " . $row['title'] . "'>" . $row['date_created'] ." &nbsp; &nbsp; &nbsp;" . $row['title'] . "</option>";
 		

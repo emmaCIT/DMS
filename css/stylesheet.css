@@ -188,13 +188,13 @@ h2 {
 }
 
 /* Containers */
-body {
-    background:lightslategray;
+body { 
+    background: #B4D1E1;
     font-family:Arial;
     font-size:0.8em;
 }
 #container, footer {
-    background:#fff;
+    background: #E6F4FD;
     width:990px;
     margin:0 auto;
     padding:20px;
@@ -238,8 +238,7 @@ footer {
 nav {
     float:left;
     font-size: 17px;
-    padding-top: 10px;
-    padding-bottom: 5px;	
+    padding-bottom: 3px;
 }
 nav ul {
     margin:0;
@@ -345,7 +344,7 @@ th{
 td{
 	text-align: center;
 }
-.row1 {
+.row1{
 	background-color:#FFFFCC;
 	font-weight: bold;
 	color:black;
@@ -387,7 +386,14 @@ textarea.record{
     width: 125px;
 } 
 input.details{
-	 width: 45px;
+	width: 45px;
+}
+input.detailss{ 
+	display: none;
+	width: 45px;
+}
+.detailss1{ 
+	display: none;
 }
 input.details1{
     width: 125px;
@@ -395,4 +401,110 @@ input.details1{
 .jlist{
 	overflow: auto;
 	overflow: scroll;
+}
+
+/* ------------------------------
+Styling the button for entering
+records.
+------------------------------ */
+.wrapper{
+	margin-top:7%;
+   	text-align: center;
+}
+/* ------------------------------
+Styling Statistics Tab
+------------------------------ */
+#wrapper{
+	width: 600px;
+	margin: 0 auto;
+	min-height: 600px;
+	
+}
+#chart,#form_values {
+	width: 559px;
+	
+}
+#chart {
+	list-style: none;
+	border-left: solid 1px #666;
+	border-bottom: solid 1px #666;
+	margin-bottom: 20px;
+}
+#chart li, #chart li span {
+	height: 20px;
+}
+#chart li .percent {
+	width: 30px;
+	position: absolute;
+	top: 0;
+	right: -40px;
+	text-align: right;
+}
+#chart li{
+	position: relative;
+	display: block;
+	width: 554px;
+	margin: 0 0 5px 5px;
+	text-align: left;
+}
+#chart li .bar {
+	width: 0;
+}
+.red .bar {
+	background: red;
+}
+.blue .bar {
+	background: blue;
+}
+.yellow .bar {
+	background: yellow;
+}
+.orange .bar {
+	background: orange;
+}
+.purple .bar {
+	background: purple;
+}
+.pink .bar {
+	background: pink;
+}
+.green .bar {
+	background: green;
+}
+.indigo .bar {
+	background: indigo;
+}
+.fied{
+	padding: 3px;
+	width: 50px;
+	border: solid 1px #000;
+	float: left;
+	margin-right: 10px;
+	color: #333;
+}
+#chartContainer{
+	width: 400px;
+	height: 300px;
+	padding: 10px;
+	float: left;
+}
+.symptoms {
+	float: center;
+	background-image: url('../image/low-sugar.jpg');
+	box-shadow:1px 0px 5px 1px #2b2b2b inset; 
+	width: 500px;
+	height: 347px;
+	background-repeat: no-repeat;
+	margin-left: 500px;                           
+	margin-right: 500px;
+}
+.moreinfor {
+	float: center;
+	margin-top:50px;
+	background-image: url('../image/diabetes-control-chart.jpg');
+	width: 500px;
+	height: 347px;
+	background-repeat: no-repeat;
+	margin-left: 200px;                           
+	margin-right: 200px;
 }

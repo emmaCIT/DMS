@@ -68,6 +68,16 @@ function update_user($user_id, $update_data) {
 	mysql_query("UPDATE `users` SET " . implode(', ', $update) . " WHERE `user_id` = $user_id");
 }
 
+function update_glucose($user_id, $updateglucose_data){
+	$update = array();
+	array_walk($updateglucose_data, 'array_sanitize');
+
+	foreach ($updateglucose_data as $field=>$data) {
+		$update[] = '`' . $field . '` = \'' . $data . '\'';
+	}
+	mysql_query("UPDATE `bloodglucoselevel` SET " . implode(', ', $update) . " WHERE `id` = $id");
+}
+
 /*
  * Inserting patient's blood glucose level records into the database.
  */

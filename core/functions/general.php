@@ -13,7 +13,7 @@ function logged_in_redirect() {
 function logged_in_redirect2() {
 	if (logged_in() === true) {
 		header('Location: patient.php');
-		exit();
+	exit();
 	}
 }
 function protect_page() {
