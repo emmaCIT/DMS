@@ -483,28 +483,32 @@ Styling Statistics Tab
 	color: #333;
 }
 #chartContainer{
-	width: 400px;
+	width: 100%;
 	height: 300px;
-	padding: 10px;
+}
+#graph{
+	position:relative;
+	height: 300px;
+}
+#stat{
+clear:both;
+height: 347px;
+margin-top: 20px;
+}
+
+.moreinfor {
+	width: 100%;
+	height: 300px;
+	background-image: url('../image/diabetes-control-chart.jpg');
+	background-repeat: no-repeat;
 	float: left;
+	margin-top: 5%; 
 }
 .symptoms {
-	float: center;
-	background-image: url('../image/low-sugar.jpg');
-	box-shadow:1px 0px 5px 1px #2b2b2b inset; 
-	width: 500px;
+	width: 100%;
 	height: 347px;
+	background-image: url('../image/low-sugar.jpg');
 	background-repeat: no-repeat;
 	margin-left: 500px;                           
 	margin-right: 500px;
-}
-.moreinfor {
-	float: center;
-	margin-top:50px;
-	background-image: url('../image/diabetes-control-chart.jpg');
-	width: 500px;
-	height: 347px;
-	background-repeat: no-repeat;
-	margin-left: 200px;                           
-	margin-right: 200px;
 }

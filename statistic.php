@@ -74,7 +74,7 @@ if (empty($_POST) === false) {
 		
 		</section> <!-- end #section-->
 
-		<p>Blood Glucose Level Reading (mmol/l)</br>
+		<p>Blood Glucose Level Reading (mmol/l)</p>
 	
 	</div> <!-- end #container-->
 		

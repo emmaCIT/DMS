@@ -13,15 +13,16 @@ protect_page();
     		
 			<h1>Information for Use</h1>
 						
-				<div id="chartContainer" style="max-width: 700px; height: 400px;"> </div>
+			
+		<div id="graph">
+		
+		<div id="chartContainer"> </div>
+		</div>	
 									
-					
-					
-	<div class="symptoms">	
-	</div> <!-- end #information for use-->
-	
-	<div class="moreinfor">	
-	</div> <!-- end #moreinfor-->
+		<div id="stat">
+		 <div class="moreinfor"> </div>	
+		 <div class="symptoms"> </div>		 
+		</div>			
 	
 	</div> <!-- end #container--> 	
 	
