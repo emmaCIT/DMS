@@ -1,6 +1,7 @@
 <?php
 include 'core/init.php';
 protect_page();
+logged_in_redirect();
 ?>
 
 <!DOCTYPE HTML>

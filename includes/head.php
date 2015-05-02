@@ -9,7 +9,6 @@
 
 <!-- JS code -->
 <script src="js/core.js" type="text/javascript"></script>
-<script src="js/piechart.js" type="text/javascript"></script>
-<script src="js/simple.js" type="text/javascript"></script>
+<script src="js/graph.js" type="text/javascript"></script>
 
 </head>

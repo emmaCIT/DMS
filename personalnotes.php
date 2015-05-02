@@ -23,12 +23,12 @@ if (empty($_POST) === false) {
    	 <?php include 'pat_aside_panel/personalnote_aside.php';?>
 		
 		<div class="personalNote">
-		<!-- if(isset($_POST['save_note']) === true && empty($errors) === true) { -->
+	
 		<?php
 			
-if(isset($_GET['success']) === true && empty($_GET['success']) === true) {
-	echo 'Your details have been saved!';
-} else {if(empty($_POST) === false && empty($errors) === true) {
+		if(isset($_GET['success']) === true && empty($_GET['success']) === true) {
+			echo 'Your details have been saved!';
+		} else {if(empty($_POST) === false && empty($errors) === true) {
 				//update patient's personal notes
 				$insert_notes = array(
 					'patient_id' 	=> $session_user_id,
@@ -44,8 +44,9 @@ if(isset($_GET['success']) === true && empty($_GET['success']) === true) {
 					exit();
 					
 		}else if (empty($errors) === false) {
-		echo output_errors($errors);
+				echo output_errors($errors);
 		}
+}
 		?>
 		
 	
@@ -54,10 +55,10 @@ if(isset($_GET['success']) === true && empty($_GET['success']) === true) {
 				<div class="fieldSet">
 					<fieldset> 
 						<legend>Personal Notes</legend>
-						<p><label class="field" for="Date Created"><span>*</span>Date Created:</label><input type="date" name="date_created" value=" $report['date_created']" class="textbox2" /></p>
+						<p><label class="field" for="Date Created"><span>*</span>Date Created:</label><input type="date" name="date_created" value="" class="note_text" /></p>
 						<p><label class="field" for="Last Updated"><span>*</span>Last Updated:</label><input type="datetime-local" name="last_updated" class="textbox3" /></p>
 						<p><label class="field" for="Title"><span>*</span>Title:</label><input type="text" name="title" class="textbox1" /></p>
-						<p><label class="field" for="Notes"><span>*</span>Notes:</label><textarea placeholder="Please enter your notes" name="notes" class="textbox-300"></textarea></p>
+						<p><label class="field" for="Notes"><span>*</span>Notes:</label><textarea placeholder="Please enter your notes" name="notes" class="textbox-note"></textarea></p>
 										
 					</fieldset>
 					<div class="notebutton">
@@ -68,9 +69,9 @@ if(isset($_GET['success']) === true && empty($_GET['success']) === true) {
 				</div> <!-- end #fieldSet-->
 			</form> <!-- end #form-->
 		</div> <!-- end #personalNote-->
-		</div>
+		</div> <!-- end #container-->
  
    <?php include 'includes/footer.php'; ?>
-   <?php  }?>
+   
 </body>
 </html>

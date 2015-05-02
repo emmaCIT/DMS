@@ -65,7 +65,7 @@ if(isset($_GET['success']) === true && empty($_GET['success']) === true) {
 					<input type="text" name="last_name" value="<?php echo $user_data['last_name']; ?>">
 				</li>
 				<li>Phone number*: <br> 
-					<input type="text" name="phone_number" value="<?php echo $user_data['phone_number']; ?>">
+					<input type="number" name="phone_number" value="<?php echo $user_data['phone_number']; ?>">
 				</li>
 				<li>Email*: <br> 
 					<input type="text" name="email" value="<?php echo $user_data['email']; ?>">

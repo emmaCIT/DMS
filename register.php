@@ -1,11 +1,9 @@
 <?php 
 include 'core/init.php';
-logged_in_redirect2();
-
+redirectUser();
 
 if (empty($_POST) === false) {
 	$required_fields = array('username', 'password', 'password_again', 'first_name', 'DOB', 'gender', 'phone_number', 'email', 'address');
-	//echo '<pre>', print_r($_POST, true), '</pre>';
 	foreach($_POST as $key=>$value) {
 		if(empty($value) && in_array($key, $required_fields) === true) {
 			$errors[] = 'Fields marked with an asterisk are required';
@@ -33,16 +31,12 @@ if (empty($_POST) === false) {
 		if(email_exists($_POST['email']) === true) {
 			$errors[] = 'Sorry, the email \'' . $_POST['email'] . '\' is already in use';
 		}
-		if (preg_match("/^\d{10}$/", $_POST['phone_number']) === false) {//check here
-			$errors[] = 'Your phone number must be 10 digits.';
-		}
 		if(preg_match("/\\s/", $_POST['phone_number']) == true) {
 			$errors[] = 'Your phone number must not contain any spaces.';
 		}
 		if(phone_exists($_POST['phone_number']) === true) {
 			$errors[] = 'Sorry, the phone number \'' . $_POST['phone_number'] . '\' is already in use';
 		}
-		
 	}
 }
 
@@ -73,6 +67,7 @@ if (empty($_POST) === false) {
 					'phone_number'	=> $_POST['phone_number'],
 					'email' 		=> $_POST['email'],
 					'address'		=> $_POST['address'],
+					'type'			=> $_POST['type'],
 					'email_code' 	=> md5($_POST['username'] + microtime())
 			);
 				register_user($register_data);

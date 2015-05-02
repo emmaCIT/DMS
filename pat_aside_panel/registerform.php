@@ -15,18 +15,18 @@
 			<li>Gender*:&nbsp;&nbsp;<input type="radio" name="gender" value="male">Male
 			&nbsp;&nbsp;<input type="radio" name="gender" value="female">Female
 			</li>
-			<li>Phone Number*: <br><input type="tel" name="phone_number" class="reg">
+			<li>Phone Number*: <br><input type="number" name="phone_number" class="reg">
 			</li>
 			<li>Email address*: <br><input required placeholder="Enter a valid email address" type="email" name="email" class="reg"> <!-- Don't forget to use the html5 email field that enables clients side validation -->
 			</li>
 			<li>Address*: <br><textarea name="address" class="reg2"> </textarea>
 			</li>
-			<!-- <li>I am a*:
-				<select name="type" <?php //if ($user_data['type'] == 1) { echo 'checked="checked"'; } ?>>
-					<option value="patient">Patient</option>
-					<option value="doctor">Doctor</option>
+			 <li>I am a*:
+				<select name="type">
+					<option value="0">Patient</option>
+					<option value="1">Doctor</option>
 				</select>
-			</li>-->
+			</li>
 			<li><input type="submit" value="Register"></li>
 		</ul>
 	</form>

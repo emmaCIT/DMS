@@ -121,6 +121,17 @@ input.textbox1 {
 	width: 300px;
 	outline: none; 
 }
+input.note_text{
+	margin-top: 30px;
+	background: url('../image/date_icon.jpg') no-repeat scroll right center #FFFFFF;
+    border: 1px solid #666;
+	box-shadow: 0 0 6px #666 inset;
+	color: #333;
+	float: left;
+	width: 300px;
+	padding: 7px 10px;
+	outline: none;
+}
 input.infor {
 	margin-top: 20px;
     border: 1px solid #666;
@@ -132,17 +143,7 @@ input.infor {
 	pointer-events: none; 
 	outline: none; 
 }
-input.textbox2 {
-	margin-top: 30px;
-	background: url('../image/date_icon.jpg') no-repeat scroll right center #FFFFFF;
-    border: 1px solid #666;
-	box-shadow: 0 0 6px #666 inset;
-	color: #333;
-	float: left;
-	width: 300px;
-	padding: 7px 10px;
-	outline: none; 
-}
+
 input.textbox3{
     margin-top: 30px;
 	background: url('../image/date_icon.jpg') no-repeat scroll right center #FFFFFF;
@@ -155,7 +156,7 @@ input.textbox3{
 	pointer-events: none;
 	outline: none;
 } 
-textarea.textbox-300 {
+textarea.textbox-note {
 	width: 300px;
 	float: left;
 	margin-top: 30px;
@@ -167,7 +168,6 @@ fieldset p {
 	clear: both;
 	padding: 5px;
 }
-
 .notebutton {
 	margin-top: 30px;
 	float: left;
@@ -179,6 +179,56 @@ fieldset p {
 	padding:20px;
 	
 }
+/* ------------------------------
+For Appointment Section Styling
+------------------------------ */
+div.fieldSet2 {
+	width: 500px;
+	border: solid black thin;
+	min-height:600px;
+	background-color: #E6F4FD;
+}
+.appointment_button{
+	margin-top: 30px;
+	float: left;
+	margin-left: 150px;
+}
+textarea.textbox-300 {
+	width: 300px;
+	float: left;
+	box-shadow: 0 0 6px #666 inset;
+	padding: 7px 10px;
+	height:150px;
+}
+input.appointment{
+    border: 1px solid #666;
+	box-shadow: 0 0 6px #666 inset;
+	color: #333;
+	padding: 7px 10px;
+	width: 300px;
+	outline: none; 
+}
+legend.appointment{
+	font-size: 20px;
+	background-color: #009148;
+	color: white;
+	width: 98%;
+	padding: 5px;
+}
+.span_appt{
+	color: red;
+	font-weight: bold;
+}
+input.textbox2 {
+	
+	background: url('../image/date_icon.jpg') no-repeat scroll right center #FFFFFF;
+    border: 1px solid #666;
+	box-shadow: 0 0 6px #666 inset;
+	color: #333;
+	width: 300px;
+	padding: 7px 10px;
+	outline: none; 
+}
 /* Headers */
 h1 {
     font-size:1.8em;
@@ -189,7 +239,7 @@ h2 {
 
 /* Containers */
 body { 
-    background: #B4D1E1;
+    background: #0CA788;
     font-family:Arial;
     font-size:0.8em;
 }
@@ -465,8 +515,8 @@ Styling Statistics Tab
 .purple .bar {
 	background: purple;
 }
-.pink .bar {
-	background: pink;
+.black .bar {
+	background: black;
 }
 .green .bar {
 	background: green;
@@ -482,6 +532,9 @@ Styling Statistics Tab
 	margin-right: 10px;
 	color: #333;
 }
+/****************************
+For Styling record statistics
+*/***************************
 #chartContainer{
 	width: 100%;
 	height: 300px;
@@ -493,7 +546,7 @@ Styling Statistics Tab
 #stat{
 clear:both;
 height: 347px;
-margin-top: 20px;
+margin-top: 15%;
 }
 
 .moreinfor {
@@ -511,4 +564,10 @@ margin-top: 20px;
 	background-repeat: no-repeat;
 	margin-left: 500px;                           
 	margin-right: 500px;
+}
+.lables{
+	position: static;
+	clear:both;
+	text-align: center;
+	margin-top: 10%;
 }

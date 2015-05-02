@@ -170,7 +170,7 @@ body {
     font-size:0.8em;
 }
 #container, footer {
-    background:#fff;
+    background:#E6F4FD;
     width:990px;
     margin:0 auto;
     padding:20px;
@@ -203,8 +203,7 @@ footer {
 nav {
     float:left;
     font-size: 17px;
-    padding-top: 10px;
-    padding-bottom: 5px;	
+    padding-bottom: 3px;	
 }
 nav ul {
     margin:0;
@@ -319,4 +318,11 @@ footer {
 /* Misc */
 .clear {
     clear:both;
+}
+/*------------------------
+Print Records Style
+--------------------------*/
+.wrapper{
+	margin-top:7%;
+   	text-align: center;
 }

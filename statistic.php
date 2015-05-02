@@ -38,7 +38,7 @@ if (empty($_POST) === false) {
 				<span class="bar"></span>
 				<span class="percent" hidden="hide"></span>
 			</li>
-			<li title="5.0" class="orange">
+			<li title="5.0" class="black">
 				<span class="bar"></span>
 				<span class="percent" hidden="hide"></span>
 			</li>
@@ -46,7 +46,7 @@ if (empty($_POST) === false) {
 				<span class="bar"></span>
 				<span class="percent" hidden="hide"></span>
 			</li>
-			<li title="9.5" class="pink">
+			<li title="9.5" class="orange">
 				<span class="bar"></span>
 				<span class="percent" hidden="hide"></span>
 			</li>
@@ -72,10 +72,9 @@ if (empty($_POST) === false) {
 			<input name="night" id="li_8" value="25.5" class="fied" />
 		</form> <!-- end #form-->
 		
-		</section> <!-- end #section-->
-
-		<p>Blood Glucose Level Reading (mmol/l)</p>
+		<div class="lables">Blood Glucose Level Reading (mmol/l)</div>
 	
+	</section> <!-- end #section-->
 	</div> <!-- end #container-->
 		
 <?php include 'includes/footer.php'; ?>

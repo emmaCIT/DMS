@@ -2,19 +2,20 @@
 function email($to, $subject, $body) {
 	mail($to, $subject, $body, 'From: emmaogbene@gmail.com');
 }
-
-function logged_in_redirect() {
+function redirectUser() {
 	if (logged_in() === true) {
 		header('Location: index.php');
 		exit();
 	}
 }
-
-function logged_in_redirect2() {
-	if (logged_in() === true) {
-		header('Location: patient.php');
-	exit();
+function logged_in_redirect() {
+	global $user_data;
+	if ($user_data['type'] ==0) {
+		header('Location: patient.php');	
+	}else {
+		header('Location: doctor.php');
 	}
+		exit();
 }
 function protect_page() {
 	if (logged_in() === false) {

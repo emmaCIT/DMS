@@ -1,6 +1,6 @@
 <?php
 include 'core/init.php';
-logged_in_redirect2();
+redirectUser();
 
 if (empty($_POST) === false) {
 	$username = $_POST['username'];

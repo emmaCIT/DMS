@@ -12,17 +12,15 @@ protect_page();
     <div id="container">
     		
 			<h1>Information for Use</h1>
-						
-			
+
 		<div id="graph">
-		
-		<div id="chartContainer"> </div>
-		</div>	
+				<div id="chartContainer"> </div>
+		</div> <!-- end #graph--> 
 									
 		<div id="stat">
-		 <div class="moreinfor"> </div>	
-		 <div class="symptoms"> </div>		 
-		</div>			
+				<div class="moreinfor"> </div>	
+		 		<div class="symptoms"> </div>		 
+		</div> <!-- end #statistics--> 		
 	
 	</div> <!-- end #container--> 	
 	

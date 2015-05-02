@@ -2,16 +2,6 @@
 include 'core/init.php';
 protect_page ();
 
-if (empty($_POST) === false) {
-	$required_fields = array('glucose_date', 'bfb', 'afb', 'bfl', 'afl', 'bfd', 'afd', 'bfbed', 'night', 'breakfast', 'lunch', 'dinner', 'bedtime', 'blood_pressure', 'comments');
-	foreach($_POST as $key=>$value) {
-		if(empty($value) && in_array($key, $required_fields) === true) {
-			$errors[] = 'Fields marked with an asterisk are required';
-			break 1;
-		}
-	}
-}
-	
 $query = "SELECT * FROM bloodglucoselevel WHERE `patient_id` = $session_user_id";
 $QueryResult = mysql_query($query);
 ?>
@@ -80,9 +70,9 @@ $QueryResult = mysql_query($query);
 				echo	"<td>" . "<input type=number class=details name=dinner value=" . $report['dinner'] . " </td>";
 				echo	"<td>" . "<input type=number class=details name=bedtime value=" . $report['bedtime'] . " </td>";
 				echo	"<td>" . "<input type=number class=details name=blood_pressure value=" . $report['blood_pressure'] . " </td>";
-				echo	"<td>" . "<input type=text 	 class=details1 name=comments value=" . $report['comments'] . " </td>";
-				echo	"<td>" . "<input type=submit name=update value=update />" . " </td>";
-				echo 	"<td>" . "<input type=submit name=delete value=delete />" . " </td>";
+				echo	"<td>" . "<input type=text placeholder=comments class=details1 name=comments value=" . $report['comments'] . " </td>";
+				echo	"<td>" . "<input type=submit name=update value=update>" . " </td>";
+				echo 	"<td>" . "<input type=submit name=delete value=delete>" . " </td>";
 				echo	"</tr>";
 				echo 	"</form>";
 			}
