@@ -1,6 +1,7 @@
 <?php
 include 'core/init.php';
 protect_page ();
+
 ?>
 
 <!DOCTYPE HTML>
@@ -16,8 +17,8 @@ protect_page ();
 		<div class="tablestyle">
 			
 			<?php
-			if (isset ( $_POST ['delete'] )) {
-				$del = $_POST ['id'];
+			if (isset ($_POST['delete'] )) {
+				$del = $_POST['id'];
 				$sql = "DELETE FROM bloodglucoselevel WHERE id = $del";
 				
 				if (mysql_query($sql)) {

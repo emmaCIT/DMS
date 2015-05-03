@@ -36,7 +36,8 @@ if(empty($_POST) === false) {
 
 <?php
 if (isset($_GET['success']) === true && empty($_GET['success']) === true) {
-	echo 'Your password has been changed.';
+	$msgchange = 'Your password has been changed successfully.';
+	echo '<script type="text/javascript"> alert("' . $msgchange. '")</script>';
 } else {
 	if (isset($_GET['force']) === true && empty($_GET['force']) === true) {
 	?>
@@ -52,7 +53,7 @@ if (isset($_GET['success']) === true && empty($_GET['success']) === true) {
 		//output errors
 		echo output_errors($errors);
 	}
-	
+}
 	?>
 	<form action="" method="post">
 		<ul>
@@ -70,11 +71,10 @@ if (isset($_GET['success']) === true && empty($_GET['success']) === true) {
 			</li>
 		</ul>
 	</form>
-	</div>
+	</div> <!-- end #container-->
 
 <?php include 'includes/footer.php'; ?>
 
 </body>
-<?php } ?>
 
 </html>

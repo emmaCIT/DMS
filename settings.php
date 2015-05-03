@@ -35,7 +35,8 @@ if (empty($_POST) === false) {
 
 <?php
 if(isset($_GET['success']) === true && empty($_GET['success']) === true) {
-	echo 'Your details have been updated!';
+	$msgupdate = 'Your details have been updated successfully!';
+	echo '<script type="text/javascript"> alert("' . $msgupdate. '")</script>';
 } else {
 	if(empty($_POST) === false && empty($errors) === true) {
 		//update user's details
@@ -55,6 +56,7 @@ if(isset($_GET['success']) === true && empty($_GET['success']) === true) {
 	}else if (empty($errors) === false) {
 		echo output_errors($errors);
 	}
+}
 	?>
 	<form action="" method="post">
 			<ul>
@@ -82,8 +84,7 @@ if(isset($_GET['success']) === true && empty($_GET['success']) === true) {
 			</ul>
 		</form>
 		
-<?php } ?>
-</div> 
+</div> <!-- end #container-->
 
 <?php include 'includes/footer.php'; ?>
 </body>

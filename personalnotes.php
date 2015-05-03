@@ -27,7 +27,8 @@ if (empty($_POST) === false) {
 		<?php
 			
 		if(isset($_GET['success']) === true && empty($_GET['success']) === true) {
-			echo 'Your details have been saved!';
+			$msg = 'Your details have been saved!';
+			echo '<script type="text/javascript"> alert("' . $msg. '")</script>';
 		} else {if(empty($_POST) === false && empty($errors) === true) {
 				//update patient's personal notes
 				$insert_notes = array(

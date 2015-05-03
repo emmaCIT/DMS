@@ -4,6 +4,7 @@ protect_page ();
 
 $query = "SELECT * FROM bloodglucoselevel WHERE `patient_id` = $session_user_id";
 $QueryResult = mysql_query($query);
+
 ?>
 
 <!DOCTYPE HTML>
@@ -52,19 +53,19 @@ $QueryResult = mysql_query($query);
 				 	"<td></td>".
 				 	"<td></td></tr>\n";
 			
-			while($report = mysql_fetch_assoc($QueryResult)){
+			while($report = mysql_fetch_assoc($QueryResult)){				
 				echo "<form action=modify.php method=POST>";
 				echo "<tr class='row2'>";
 				echo  "<td align=left class=detailss1>" . "<input type=number class=detailss readonly=readonly name=id value=". $report['id']." </td>";
 				echo  "<td align=left>" . "<input type=date class=details2 name=glucose_date value=". $report['glucose_date']." </td>";
-				echo	"<td>" . "<input type=number class=details name=bfb value=" . $report['bfb'] . " </td>";
-				echo	"<td>" . "<input type=number class=details name=afb value=" . $report['afb'] . " </td>";
-				echo	"<td>" . "<input type=number class=details name=bfl value=" . $report['bfl'] . " </td>";
-				echo	"<td>" . "<input type=number class=details name=afl value=" . $report['afl'] . " </td>";
-				echo	"<td>" . "<input type=number class=details name=bfd value=" . $report['bfd'] . " </td>";
-				echo	"<td>" . "<input type=number class=details name=afd value=" . $report['afd'] . " </td>";
-				echo	"<td>" . "<input type=number class=details name=bfbed value=" . $report['bfbed'] . " </td>";
-				echo	"<td>" . "<input type=number class=details name=night value=" . $report['night'] . " </td>";
+				echo	"<td>" . "<input type=number step=0.1 min=0 class=details name=bfb value=" . $report['bfb'] . " </td>";
+				echo	"<td>" . "<input type=number step=0.1 min=0 class=details name=afb value=" . $report['afb'] . " </td>";
+				echo	"<td>" . "<input type=number step=0.1 min=0 class=details name=bfl value=" . $report['bfl'] . " </td>";
+				echo	"<td>" . "<input type=number step=0.1 min=0 class=details name=afl value=" . $report['afl'] . " </td>";
+				echo	"<td>" . "<input type=number step=0.1 min=0 class=details name=bfd value=" . $report['bfd'] . " </td>";
+				echo	"<td>" . "<input type=number step=0.1 min=0 class=details name=afd value=" . $report['afd'] . " </td>";
+				echo	"<td>" . "<input type=number step=0.1 min=0 class=details name=bfbed value=" . $report['bfbed'] . " </td>";
+				echo	"<td>" . "<input type=number step=0.1 min=0 class=details name=night value=" . $report['night'] . " </td>";
 				echo	"<td>" . "<input type=number class=details name=breakfast value=" . $report['breakfast'] . " </td>";
 				echo	"<td>" . "<input type=number class=details name=lunch value=" . $report['lunch'] . " </td>";
 				echo	"<td>" . "<input type=number class=details name=dinner value=" . $report['dinner'] . " </td>";
@@ -79,6 +80,7 @@ $QueryResult = mysql_query($query);
 				
 				echo "</table>" ;
 				echo '<p/>';
+		
 		?>
 			
 		</div> <!-- end #tablestyle-->
