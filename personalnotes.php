@@ -2,6 +2,7 @@
 include 'core/init.php';
 protect_page ();
 
+
 if (empty($_POST) === false) {
 	$required_fields = array('date_created', 'title', 'notes');
 	foreach($_POST as $key=>$value) {
@@ -25,10 +26,9 @@ if (empty($_POST) === false) {
 		<div class="personalNote">
 	
 		<?php
-			
 		if(isset($_GET['success']) === true && empty($_GET['success']) === true) {
 			$msg = 'Your details have been saved!';
-			echo '<script type="text/javascript"> alert("' . $msg. '")</script>';
+			echo '<script type="text/javascript"> alert("' .$msg. '")</script>';
 		} else {if(empty($_POST) === false && empty($errors) === true) {
 				//update patient's personal notes
 				$insert_notes = array(
@@ -39,7 +39,6 @@ if (empty($_POST) === false) {
 					'notes'			=> $_POST['notes']
 				
 			);
-
 					insert_personalnotes($session_user_id, $insert_notes);
 					header('Location: personalnotes.php?success');
 					exit();
@@ -47,7 +46,7 @@ if (empty($_POST) === false) {
 		}else if (empty($errors) === false) {
 				echo output_errors($errors);
 		}
-}
+	}
 		?>
 		
 	
@@ -56,14 +55,14 @@ if (empty($_POST) === false) {
 				<div class="fieldSet">
 					<fieldset> 
 						<legend>Personal Notes</legend>
-						<p><label class="field" for="Date Created"><span>*</span>Date Created:</label><input type="date" name="date_created" value="" class="note_text" /></p>
+						<p><label class="field" for="Date Created"><span>*</span>Date Created:</label><input type="date" name="date_created" class="note_text" value="<?php if(isset($_POST['date_created'])) echo $_POST['date_created']; ?>" /></p>
 						<p><label class="field" for="Last Updated"><span>*</span>Last Updated:</label><input type="datetime-local" name="last_updated" class="textbox3" /></p>
-						<p><label class="field" for="Title"><span>*</span>Title:</label><input type="text" name="title" class="textbox1" /></p>
-						<p><label class="field" for="Notes"><span>*</span>Notes:</label><textarea placeholder="Please enter your notes" name="notes" class="textbox-note"></textarea></p>
+						<p><label class="field" for="Title"><span>*</span>Title:</label><input type="text" name="title" class="textbox1" value="<?php if(isset($_POST['title'])) echo $_POST['title']; ?>" /></p>
+						<p><label class="field" for="Notes"><span>*</span>Notes:</label><textarea placeholder="Please enter your notes" name="notes" class="textbox-note"><?php if(isset($_POST['notes'])) echo $_POST['notes']; ?></textarea></p>
 										
 					</fieldset>
 					<div class="notebutton">
-						<button type="submit" name= "save_note" value="Save Note">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+						<button type="submit" name="save_note" value="Save Note">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
 						<!-- <input type="submit" name= "update" value="Update Note">&nbsp;&nbsp;&nbsp;&nbsp;
 						<input type="submit" name= "delete" value="Delete Note"> -->
 					</div> <!-- end #button-->

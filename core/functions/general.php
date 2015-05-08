@@ -12,8 +12,10 @@ function logged_in_redirect() {
 	global $user_data;
 	if ($user_data['type'] ==0) {
 		header('Location: patient.php');	
-	}else {
+	}else if ($user_data['type'] ==1){
 		header('Location: doctor.php');
+	}else {
+		header('Location: index.php');
 	}
 		exit();
 }

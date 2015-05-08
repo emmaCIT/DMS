@@ -64,10 +64,19 @@ textarea.infor2{
 	pointer-events: none;
 	width:  200px;
 	float: left;
-	margin-top: 30px;
+	margin-top: 20px;
 	box-shadow: 0 0 6px #666 inset;
 	padding: 7px 10px;
-	height:100px;
+	height:50px;
+}
+textarea.medicalHistory{
+	background: #ffffff;
+	width:  200px;
+	float: left;
+	margin-top: 20px;
+	box-shadow: 0 0 6px #666 inset;
+	padding: 7px 10px;
+	height:50px;
 }
 .title1 {
     background: url('../image/title_icon.jpg') no-repeat scroll right center #FFFFFF;
@@ -352,7 +361,7 @@ center-content styles
 	border-color: lightslategray;
 	text-align:center;
 	width: 350px;
-	height: 600px;
+	height: 650px;
 }
 /* Aside */
 aside {

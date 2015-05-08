@@ -115,6 +115,18 @@ function insert_personalnotes($user_id, $insert_notes){
 	mysql_query("INSERT INTO `personalnotes` ($fields) VALUES ($data)");
 }
 
+/*
+ * Inserting patients medical history into the database.
+ */
+function insert_medicalhistory($user_id, $insert_medicaldata){
+	array_walk($insert_medicaldata, 'array_sanitize');
+
+	$fields = '`' . implode('`, `', array_keys($insert_medicaldata)) . '`';
+	$data = '\'' . implode('\', \'', $insert_medicaldata) . '\'';
+
+	mysql_query("INSERT INTO `patient` ($fields) VALUES ($data)");
+}
+
 function activate($email, $email_code) {
 	$email 		=mysql_real_escape_string($email);
 	$email_code =mysql_real_escape_string($email_code);

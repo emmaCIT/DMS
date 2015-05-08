@@ -71,7 +71,7 @@ $QueryResult = mysql_query($query);
 				echo	"<td>" . "<input type=number class=details name=dinner value=" . $report['dinner'] . " </td>";
 				echo	"<td>" . "<input type=number class=details name=bedtime value=" . $report['bedtime'] . " </td>";
 				echo	"<td>" . "<input type=number class=details name=blood_pressure value=" . $report['blood_pressure'] . " </td>";
-				echo	"<td>" . "<input type=text placeholder=comments class=details1 name=comments value=" . $report['comments'] . " </td>";
+				echo	"<td>" . "<input type=text placeholder=comments class=details1 name=comments value=" . $report['comments'] . ">" . " </td>";
 				echo	"<td>" . "<input type=submit name=update value=update>" . " </td>";
 				echo 	"<td>" . "<input type=submit name=delete value=delete>" . " </td>";
 				echo	"</tr>";

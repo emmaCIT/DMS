@@ -1,6 +1,17 @@
 <?php
 include 'core/init.php';
 protect_page();
+
+if (empty($_POST) === false) {
+	$required_fields = array('medical_history');
+	foreach($_POST as $key=>$value) {
+		if(empty($value) && in_array($key, $required_fields) === true) {
+			$errors[] ='The Field medical history is required';
+			break 1;
+		}
+	}
+
+}
 ?>
 
 <!DOCTYPE HTML>
@@ -39,17 +50,36 @@ protect_page();
 								echo '<img src="', $user_data['profile'], '" alt="', $user_data['first_name'], '\'s Profile Image">';
 						}
 						?>
-						
-					
+									
 				</div> <!-- end #left-container-->
-				 
 				<div class="buttons">
 						<form action="" method="post" enctype="multipart/form-data">
 							<input type="file" name="profile"> <input type="submit">
 						</form>
-					</div> <!-- end #buttons--> 
+				</div> <!-- end #buttons--> 
 
-				
+				<?php
+					if(isset($_GET['success'])=== true && empty($_GET['success'])=== true) {
+					$msg = 'Your medical history have been saved!';
+					echo '<script type="text/javascript"> alert("' . $msg. '")</script>';
+					}else {
+						if(empty($_POST)=== false && empty($errors)=== true) {
+							//insert patient's medical history into the database
+							$insert_medicaldata= array(
+							'patient_id' 			=> $session_user_id,
+							'username' 				=> $user_data['username'],
+							'medical_history' 		=> $_POST['medical_history']			
+					);
+
+					insert_medicalhistory($session_user_id, $insert_medicaldata);
+					header('Location: patient.php?success');
+					exit();
+					
+					}else if (empty($errors) === false) {
+						echo output_errors($errors);
+					}
+				}
+				?>
 				
 				<!-- This is to display the Patient's Information Details -->
 				<div class="center-container">
@@ -64,6 +94,9 @@ protect_page();
 						<p><label class="field" for="email">Email:</label><input type="text" name="email" class="infor" value="<?php echo $user_data['email']; ?>" /></p>
 						<p><label class="field" for="address">Address:</label><textarea name="address" class="infor2" ><?php echo $user_data['address']; ?></textarea></p>
 						
+						<form action="" method="post">
+							<p><label class="field" for="medical_history">Medical History:</label><textarea placeholder="Please enter your medical history" name="medical_history" class="medicalHistory"><?php if(isset($_POST['medical_history'])) echo $_POST['medical_history']; ?></textarea></p><button type="submit" name="save_history">Save Medical History</button>
+						</form> <!-- end #form-->
 				</fieldset>
 				</div> <!-- end #center-container--> 	
 				

@@ -18,7 +18,7 @@
 	        <?php
 			if (isset($_GET['success']) === true && empty($_GET['success']) === true) {
 			?>
-					<p>Email has been sent</p>
+					<p>Email has been sent successfully</p>
 			<?php
 				} else {	
 						if (empty($_POST) === false) {
@@ -38,6 +38,7 @@
 							exit();		
 						}
 				}
+}
 		?>    
     	<div class="notifypatients">
     		<form action="" method="post">
@@ -49,8 +50,7 @@
 			</fieldset>
 			<input type="submit" value="Send" class="btn">
 			</form> <!-- end #form--> 
-		</div> <!-- end #notifypatients--> 			
-			<?php } ?>	
+		</div> <!-- end #notifypatients--> 				
 	</div> <!-- end #container-->
       
       <?php include 'includes/footer.php';?>
