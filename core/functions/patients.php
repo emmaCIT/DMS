@@ -23,12 +23,8 @@ function mail_users($subject, $message) {
  * This function is used to send email to doctors to schedule an appointment.
  */
 function mail_doctor($fullname, $email, $subject, $message, $from) {
-	//$query = mysql_query("SELECT `email` FROM `users` WHERE `type` = 0");
-	//while (($row = mysql_fetch_assoc($query)) !== false) {
-		
-	//	email($row['email'], $subject, "Hello " . $row['first_name'] . ",\n\n" . $message . "\n\n- Diabetes Management System");
-	//}
-	mail($email, $subject, $message, "From:".$from);
+	$user_data	 = patient_data('user_id', 'first_name', 'email');
+	mail($email, $subject, $message, "From:".$user_data);
 }
 
 function loginRole($login){
@@ -68,6 +64,7 @@ function recover($mode, $email) {
 		email($email, 'Your password recovery', "Hello " . $user_data['first_name'] . ", \n\nYour new password is: " . $generated_password . "\n\n-Diabetes Management System");
 	}
 }
+
 /*
  * Updating users' information in the database.
  */

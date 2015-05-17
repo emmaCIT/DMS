@@ -2,7 +2,7 @@
 		<ul>
 			<li>Username*: <br><input type="text" name="username" class="reg" value="<?php if(isset($_POST['username'])) echo $_POST['username']; ?>" />
 			</li>
-			<li>Password*: <br><input type="password" name="password" class="reg" value="<?php if(isset($_POST['password'])) echo $_POST['password']; ?>" />
+			<li>Password*: (must be at least 8 characters)<br><input type="password" name="password" class="reg" value="<?php if(isset($_POST['password'])) echo $_POST['password']; ?>" />
 			</li>
 			<li>Password again*: <br><input type="password" name="password_again" class="reg" value="<?php if(isset($_POST['password_again'])) echo $_POST['password_again']; ?>" />
 			</li>
@@ -27,6 +27,10 @@
 					<option value="1">Doctor</option>
 				</select>
 			</li>
-			<li><input type="submit" value="Register"></li>
+			<li><input type="submit" value="Register" onclick="clearform();"></li>
 		</ul>
 	</form>
+	
+	<script>
+
+	</script>

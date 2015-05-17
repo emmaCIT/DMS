@@ -67,7 +67,7 @@ textarea.infor2{
 	margin-top: 30px;
 	box-shadow: 0 0 6px #666 inset;
 	padding: 7px 10px;
-	height:100px;
+	height:50px;
 }
 .title1 {
     background: url('../image/title_icon.jpg') no-repeat scroll right center #FFFFFF;
@@ -267,7 +267,7 @@ center-content styles
 	border-color: lightslategray;
 	text-align:center;
 	width: 350px;
-	height: 600px;
+	height: 550px;
 }
 /* ------------------------------
 Notify-Patients Styles
@@ -325,4 +325,74 @@ Print Records Style
 .wrapper{
 	margin-top:7%;
    	text-align: center;
+}
+
+wrapper.printrecord{
+	
+	visibility:hidden;
+}
+
+/* ------------------------------
+table styles for Insulin Adjustments
+------------------------------ */	
+table, th, td {
+	border: 1px solid black;
+	width:70%;
+	text-align:right;
+	padding:9px;
+	border:5px solid gray;
+	margin:6%;
+	border-collapse: collapse;
+}
+th{	
+	background-color: lightslategray;
+	color:white;
+	text-align: left;
+}
+
+td{
+	text-align: center;
+}
+.row1{
+	background-color:#FFFFCC;
+	font-weight: bold;
+	color:black;
+	text-align: center;
+}
+.row2 {
+	background-color:white;
+	color:black;
+	text-align: center;
+}
+.tablestyle{
+	width: 70%;
+	display:block;
+}
+
+
+/* ------------------------------------
+table styles for View Patients BGL Records
+--------------------------------------- */	
+table.viewrecords, th.viewrecords, td.viewrecords {
+	border: 1px solid black;
+	width:70%;
+	text-align:right;
+	border:5px solid gray;
+	margin:6%;
+	border-collapse: collapse;
+}
+.patientinforstyle{
+	width: 70%;
+	display:block;
+	overflow: auto;
+	overflow: scroll;
+}
+.details2{
+    width: 125px;
+} 
+input.details{
+	width: 45px;
+}
+input.details1{
+    width: 125px;
 }

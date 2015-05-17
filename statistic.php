@@ -26,43 +26,43 @@ if (empty($_POST) === false) {
 		
 		<section id="wrapper">
 		<ul id="chart">
-			<li title="3.0" class="red">
-				<span class="bar"></span>
+			<li title="4.0" class="red">
+				<span class="bar">bfb</span>
 				<span class="percent" hidden="hide"></span>
 			</li>
 			<li title="5.0" class="blue">
-				<span class="bar"></span>
+				<span class="bar">afb</span>
 				<span class="percent" hidden="hide"></span>
 			</li>
 			<li title="6.0" class="yellow">
-				<span class="bar"></span>
+				<span class="bar">bfl</span>
 				<span class="percent" hidden="hide"></span>
 			</li>
-			<li title="5.0" class="black">
-				<span class="bar"></span>
+			<li title="5.0" class="pink">
+				<span class="bar">afl</span>
 				<span class="percent" hidden="hide"></span>
 			</li>
 			<li title="9.5" class="purple">
-				<span class="bar"></span>
+				<span class="bar">bfd</span>
 				<span class="percent" hidden="hide"></span>
 			</li>
 			<li title="9.5" class="orange">
-				<span class="bar"></span>
+				<span class="bar">afd</span>
 				<span class="percent" hidden="hide"></span>
 			</li>
 			<li title="75.0" class="green">
-				<span class="bar"></span>
+				<span class="bar">bfbed</span>
 				<span class="percent" hidden="hide"></span>
 			</li>
 			<li title="25.5" class="indigo">
-				<span class="bar"></span>
+				<span class="bar">night</span>
 				<span class="percent" hidden="hide"></span>
 			</li>
 		</ul>
 		
 		<form id="form_values" action="" method="post">
 		
-			<input name="bfb" id="li_1" value="3.0" class="fied" />
+			<input name="bfb" id="li_1" value="4.0" class="fied" />
 			<input name="afb" id="li_2" value="5.0" class="fied" />
 			<input name="bfl" id="li_3" value="6.0" class="fied" />
 			<input name="afl" id="li_4" value="5.0" class="fied" />

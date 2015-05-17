@@ -68,6 +68,7 @@ if (empty($_POST) === false) {
 							$insert_medicaldata= array(
 							'patient_id' 			=> $session_user_id,
 							'username' 				=> $user_data['username'],
+							'id' 					=> $_POST['id'],
 							'medical_history' 		=> $_POST['medical_history']			
 					);
 
@@ -80,6 +81,12 @@ if (empty($_POST) === false) {
 					}
 				}
 				?>
+				<?php 
+				if(isset($_POST['"medical_history"'])) echo $_POST['"medical_history"'];
+				
+					$query = "SELECT medical_history FROM patient WHERE `patient_id` = $session_user_id";
+					$QueryResult = mysql_query($query);								
+					?>
 				
 				<!-- This is to display the Patient's Information Details -->
 				<div class="center-container">
@@ -95,7 +102,13 @@ if (empty($_POST) === false) {
 						<p><label class="field" for="address">Address:</label><textarea name="address" class="infor2" ><?php echo $user_data['address']; ?></textarea></p>
 						
 						<form action="" method="post">
-							<p><label class="field" for="medical_history">Medical History:</label><textarea placeholder="Please enter your medical history" name="medical_history" class="medicalHistory"><?php if(isset($_POST['medical_history'])) echo $_POST['medical_history']; ?></textarea></p><button type="submit" name="save_history">Save Medical History</button>
+							<p><label class="field" for="medical_history">Medical History:</label><textarea placeholder="Please enter your medical history" name="medical_history" class="medicalHistory" ><?php 
+							while($report = mysql_fetch_assoc($QueryResult)){
+								echo $report['medical_history'];
+							}
+							?></textarea>
+							
+							</p><button type="submit" name="save_history">Save Medical History</button> <!-- end #submit medicalhistory-->
 						</form> <!-- end #form-->
 				</fieldset>
 				</div> <!-- end #center-container--> 	

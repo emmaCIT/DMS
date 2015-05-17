@@ -38,15 +38,15 @@ ul li {
     padding:15px 0;
 }
 ul li input[type="text"], ul li input[type="password"] {
-    width:200px; 
+    width:250px; 
 }
-.reg {
+.reg{
 	background-color: #f2f0bd; 
 	display: inline-block;
-	width:200px;
+	width:250px;
 }
 .reg2{
-	width:200px;
+	width:250px;
 	background-color: #f2f0bd;
 	height:100px;
 }
@@ -259,7 +259,7 @@ body {
     padding:20px;
 }
 header {
-    width:1025px;
+    width:76%;
     margin:0 auto 0px auto;
 }
 #container {
@@ -269,12 +269,8 @@ header {
 
 .decorate{
 	background-size: cover;	
-	width: 990px;
-	height:190px;
-	background-color: #f9f9f9;
-	background-image: url('../image/diabetes-logo.jpg');
+	background-image: url('../image/.jpg');
 	background-repeat: no-repeat;
-	float: left;
 	
 }
 footer {
@@ -332,8 +328,8 @@ left-content styles
 ------------------------------ */	
 .left-container{
 	box-shadow:1px 0px 8px 1px #2b2b2b inset; 
-	width: 190px;
-	height:190px;
+	width: 20%;
+	height:20%;
 	margin-bottom: 5px;
 	background-color: #f9f9f9;
 	padding: 10px;
@@ -343,6 +339,7 @@ left-content styles
 }
 .left-container img{
 	width: 100%;
+
 }
 .buttons {
 	width: 190px;
@@ -524,8 +521,8 @@ Styling Statistics Tab
 .purple .bar {
 	background: purple;
 }
-.black .bar {
-	background: black;
+.pink .bar {
+	background: pink;
 }
 .green .bar {
 	background: green;
@@ -554,7 +551,7 @@ For Styling record statistics
 }
 #stat{
 clear:both;
-height: 347px;
+height: 300px;
 margin-top: 15%;
 }
 
@@ -564,13 +561,12 @@ margin-top: 15%;
 	background-image: url('../image/diabetes-control-chart.jpg');
 	background-repeat: no-repeat;
 	float: left;
-	margin-top: 5%; 
 }
 .symptoms {
 	width: 100%;
 	height: 347px;
 	background-image: url('../image/low-sugar.jpg');
-	background-repeat: no-repeat;
+	background-repeat: no-repeat; 
 	margin-left: 500px;                           
 	margin-right: 500px;
 }

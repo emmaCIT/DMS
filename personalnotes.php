@@ -63,8 +63,8 @@ if (empty($_POST) === false) {
 					</fieldset>
 					<div class="notebutton">
 						<button type="submit" name="save_note" value="Save Note">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
-						<!-- <input type="submit" name= "update" value="Update Note">&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="submit" name= "delete" value="Delete Note"> -->
+						<input type="submit" name= "update" value="Update Note">&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="submit" name= "delete" value="Delete Note">
 					</div> <!-- end #button-->
 				</div> <!-- end #fieldSet-->
 			</form> <!-- end #form-->

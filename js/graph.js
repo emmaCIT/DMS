@@ -5,15 +5,19 @@ window.onload = function() {
 	var chart = new CanvasJS.Chart("chartContainer", {
 		theme: "theme3",
 		//colorSet : "greenShades",
-		title : {
-			text : "Blood Test Levels for Diagnosis of Diabetes"
+		title:{
+			text:"Blood Test Levels for Diagnosis of Diabetes"
 		},
-		animationEnabled: true,
-		data : [
-      {
+			animationEnabled: true,
+			axisY: {
+				valueFormatString: "#0 mmol/l",
+				title: "Blood Glucose Level"
+			},
+		data: [
+		{
+			// Change type to "bar", "splineArea", "area", "spline", "pie",etc.
          type: "column",
-       showInLegend: true,
-       dataPoints: [
+         dataPoints: [
                     {label: "Low", 		y: 2.7 },
                     {label: "Normal", 	y: 8.1},
                     {label: "High", 	y: 23.1}	
