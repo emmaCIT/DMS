@@ -1,6 +1,6 @@
 <?php
 function email($to, $subject, $body) {
-	mail($to, $subject, $body, 'From: emmaogbene@gmail.com');
+	mail($to, $subject, $body, 'From: diabetesmanagementsystem@gmail.com');
 }
 function redirectUser() {
 	if (logged_in() === true) {

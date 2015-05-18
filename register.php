@@ -54,8 +54,8 @@ if (empty($_POST) === false) {
 
 <?php
 	if (isset($_GET['success']) && empty($_GET['success'])) {
-		//$msg = 'You\'ve been registered successfully! Please check your email to activate your account.';
-		//echo '<script type="text/javascript"> alert("' . $msg. '")</script>';
+		$msg = 'You\'ve been registered successfully! Please check your email to activate your account.';
+		echo '<script type="text/javascript"> alert("' . $msg. '")</script>';
 	}else {
 		if (empty($_POST) === false && empty($errors) === true) {
 			$register_data = array(

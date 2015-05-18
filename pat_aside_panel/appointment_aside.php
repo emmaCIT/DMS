@@ -22,7 +22,7 @@
 							echo output_errors($errors);
 						} else {
 						//Here, we send email.
-						 mail_doctor($_POST['fullname'], $_POST['email'], $_POST['subject'], $_POST['message'],"From: " . $user_data['email']);
+						 mail_doctor($_POST['fullname'], $_POST['email'], $_POST['subject'], $_POST['message'], $user_data['email']);
 						 header('Location: appointment.php?success');
 						  exit();
 					}

@@ -64,7 +64,9 @@ var ListImages =
     'image/image3.jpg',           
     'image/image4.jpg',
     'image/image5.jpg',
-    'image/image6.jpg'           
+    'image/image6.jpg',
+    'image/image7.jpg',
+    'image/image8.jpg'        
     ],
     startimage = 0;
     Duration = 6900;
@@ -87,7 +89,7 @@ function slideShow() {
    }
 </script>
 
- <img id="myslider" src="image/day.jpg" alt="sliding">
+ <img id="myslider" src="image/image1.jpg" alt="sliding">
  
 	</div> <!-- end #decorate-->
 </div><!-- end #container-->

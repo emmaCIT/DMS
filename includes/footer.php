@@ -1,1 +1,1 @@
-<footer> Copyright &copy; Emmanuela Ogbene 2015. All rights reserved. </footer>
+<footer> Copyright &copy; 2015 Diabetes Management System. All rights reserved. | by EmmanuelaO</footer>
